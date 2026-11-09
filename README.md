@@ -24,7 +24,7 @@ Web Prod Skills is an open-source toolkit for making AI-assisted web engineering
 
 The website source lives in `docs/` in this repository. It is intentionally static (no build framework or runtime dependency).
 
-After the Pages workflow is merged into `main` and GitHub Pages is configured to use **GitHub Actions**, every push to `main` that changes `docs/**` or the Pages workflow automatically validates and deploys the site. The workflow can also be started manually.
+After the Pages workflow is merged into `main` and GitHub Pages is configured to use **GitHub Actions**, every push to `main` automatically rebuilds the generated skills/gates catalog and deploys the site, so changes to repository indexes and other source files are reflected without a separate manual website edit. The workflow can also be started manually.
 
 The site includes:
 - Search-oriented title, description and relevant topic metadata.
