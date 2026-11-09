@@ -47,6 +47,114 @@
       "requires_gate": [
         "gates/pre-merge/route-authz"
       ]
+    },
+    {
+      "name": "llm-output-safety",
+      "path": "skills/ai/llm-output-safety/SKILL.md",
+      "applies_to": [
+        "ai",
+        "backend",
+        "frontend"
+      ],
+      "triggers": [
+        "rendering model output",
+        "using model output to trigger tools"
+      ],
+      "requires_gate": [
+        "gates/pre-merge/llm-output-safety"
+      ]
+    },
+    {
+      "name": "prompt-versioning-evals",
+      "path": "skills/ai/prompt-versioning-evals/SKILL.md",
+      "applies_to": [
+        "ai",
+        "backend"
+      ],
+      "triggers": [
+        "editing production prompts",
+        "changing model or retrieval configuration"
+      ],
+      "requires_gate": [
+        "gates/pre-merge/ai-eval-evidence"
+      ]
+    },
+    {
+      "name": "external-integrations",
+      "path": "skills/integrations/external-integrations/SKILL.md",
+      "applies_to": [
+        "backend",
+        "integrations"
+      ],
+      "triggers": [
+        "provider API integration",
+        "webhooks",
+        "OAuth"
+      ],
+      "requires_gate": [
+        "gates/pre-merge/integration-resilience"
+      ]
+    },
+    {
+      "name": "production-observability",
+      "path": "skills/observability/production-observability/SKILL.md",
+      "applies_to": [
+        "frontend",
+        "backend",
+        "ai",
+        "integrations"
+      ],
+      "triggers": [
+        "new network/database/LLM path",
+        "changing SLOs or alerts"
+      ],
+      "requires_gate": [
+        "gates/pre-merge/observability-evidence"
+      ]
+    },
+    {
+      "name": "database-migrations",
+      "path": "skills/backend/database-migrations/SKILL.md",
+      "applies_to": [
+        "backend",
+        "database"
+      ],
+      "triggers": [
+        "schema or data migration",
+        "backfills"
+      ],
+      "requires_gate": [
+        "gates/pre-deploy/migration-safety"
+      ]
+    },
+    {
+      "name": "accessibility-performance",
+      "path": "skills/frontend/accessibility-performance/SKILL.md",
+      "applies_to": [
+        "frontend"
+      ],
+      "triggers": [
+        "user-facing UI changes",
+        "routing or bundle changes"
+      ],
+      "requires_gate": [
+        "gates/pre-merge/frontend-quality"
+      ]
+    },
+    {
+      "name": "api-contracts",
+      "path": "skills/backend/api-contracts/SKILL.md",
+      "applies_to": [
+        "backend",
+        "api"
+      ],
+      "triggers": [
+        "API endpoint or schema changes",
+        "pagination or error contract changes"
+      ],
+      "requires_gate": [
+        "gates/pre-merge/api-contract"
+      ]
     }
   ]
 }
