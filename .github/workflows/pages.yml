@@ -3,9 +3,6 @@ name: Deploy documentation to GitHub Pages
 on:
   push:
     branches: [main]
-    paths:
-      - "docs/**"
-      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -22,7 +19,12 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - name: Validate published site
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generate website catalog from canonical indexes
+        run: node scripts/build-site.mjs
+      - name: Validate generated site
         run: |
           test -s docs/index.html
           test -s docs/robots.txt
@@ -30,6 +32,8 @@ jobs:
           test -s docs/llms.txt
           grep -q 'rel="canonical"' docs/index.html
           grep -q 'application/ld+json' docs/index.html
+          grep -q 'Indexed agent skills' docs/index.html
+          grep -q 'Indexed engineering gates' docs/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs
