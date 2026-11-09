@@ -1,0 +1,9 @@
+version: 1
+default: block
+levels:
+  block:
+    behavior: fail
+  warn:
+    behavior: require-pr-acknowledgement
+  info:
+    behavior: report-only
