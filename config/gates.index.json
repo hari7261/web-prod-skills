@@ -17,7 +17,7 @@
       "name": "input-validation",
       "severity": "block",
       "checks": [
-        "schema-validation-evidence"
+        "fresh-reviewed-evidence-manifest"
       ]
     },
     {
@@ -26,7 +26,61 @@
       "name": "route-authz",
       "severity": "block",
       "checks": [
-        "route-authn-authz-evidence"
+        "fresh-reviewed-evidence-manifest"
+      ]
+    },
+    {
+      "path": "gates/pre-merge/ai-eval-evidence",
+      "stage": "pre-merge",
+      "name": "ai-eval-evidence",
+      "severity": "block",
+      "checks": [
+        "fresh-reviewed-evidence-manifest"
+      ]
+    },
+    {
+      "path": "gates/pre-merge/integration-resilience",
+      "stage": "pre-merge",
+      "name": "integration-resilience",
+      "severity": "block",
+      "checks": [
+        "fresh-reviewed-evidence-manifest"
+      ]
+    },
+    {
+      "path": "gates/pre-merge/observability-evidence",
+      "stage": "pre-merge",
+      "name": "observability-evidence",
+      "severity": "block",
+      "checks": [
+        "fresh-reviewed-evidence-manifest"
+      ]
+    },
+    {
+      "path": "gates/pre-merge/frontend-quality",
+      "stage": "pre-merge",
+      "name": "frontend-quality",
+      "severity": "block",
+      "checks": [
+        "fresh-reviewed-evidence-manifest"
+      ]
+    },
+    {
+      "path": "gates/pre-merge/api-contract",
+      "stage": "pre-merge",
+      "name": "api-contract",
+      "severity": "block",
+      "checks": [
+        "fresh-reviewed-evidence-manifest"
+      ]
+    },
+    {
+      "path": "gates/pre-deploy/migration-safety",
+      "stage": "pre-deploy",
+      "name": "migration-safety",
+      "severity": "block",
+      "checks": [
+        "fresh-reviewed-evidence-manifest"
       ]
     }
   ]
