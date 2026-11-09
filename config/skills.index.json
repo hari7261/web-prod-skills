@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "skills": [
+    {
+      "name": "secrets-management",
+      "path": "skills/cross-cutting/secrets-management/SKILL.md",
+      "applies_to": [
+        "web"
+      ],
+      "triggers": [
+        "adding configuration",
+        "handling credentials",
+        "reviewing secrets"
+      ],
+      "requires_gate": [
+        "gates/pre-commit/secrets-scan"
+      ]
+    },
+    {
+      "name": "input-validation",
+      "path": "skills/backend/input-validation/SKILL.md",
+      "applies_to": [
+        "backend",
+        "api"
+      ],
+      "triggers": [
+        "adding or changing an HTTP endpoint",
+        "parsing request body/query/params/headers",
+        "consuming webhook payloads"
+      ],
+      "requires_gate": [
+        "gates/pre-merge/input-validation"
+      ]
+    },
+    {
+      "name": "authn-authz",
+      "path": "skills/backend/authn-authz/SKILL.md",
+      "applies_to": [
+        "backend",
+        "api"
+      ],
+      "triggers": [
+        "adding or changing a route",
+        "accessing tenant-scoped resources",
+        "changing authentication or authorization"
+      ],
+      "requires_gate": [
+        "gates/pre-merge/route-authz"
+      ]
+    }
+  ]
+}
