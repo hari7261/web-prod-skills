@@ -1,0 +1,25 @@
+# Web Prod Skills
+
+> Open-source production-readiness toolkit for AI coding agents and web engineering teams building web applications.
+
+Website: https://hari7261.github.io/web-prod-skills/
+Repository: https://github.com/hari7261/web-prod-skills
+License: MIT
+
+## Contents
+- Agent contract and production definition of done.
+- Ten skills and ten quality/security gates.
+- Engineering knowledge baselines, templates, starter eval dataset and rubric.
+- GitHub Actions CI and Pages deployment workflow.
+
+## Limitations
+Some gates are static heuristics. Other gates validate reviewer-supplied evidence manifests and do not independently execute referenced tests. Read the README and gate limitations; a passing manifest is not proof of production safety.
+
+## Documentation
+- [README](https://github.com/hari7261/web-prod-skills#readme)
+- [AGENTS.md](https://github.com/hari7261/web-prod-skills/blob/main/AGENTS.md)
+- [Skills index](https://github.com/hari7261/web-prod-skills/blob/main/config/skills.index.json)
+- [Gates index](https://github.com/hari7261/web-prod-skills/blob/main/config/gates.index.json)
+- [Knowledge baselines](https://github.com/hari7261/web-prod-skills/tree/main/knowledge)
+- [Evals](https://github.com/hari7261/web-prod-skills/tree/main/evals)
+- [License](https://github.com/hari7261/web-prod-skills/blob/main/LICENSE)
