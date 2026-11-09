@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  validate-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tagged source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate tag and package version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          node -e 'const p=require("./package.json"); if (p.version !== process.env.RELEASE_TAG.replace(/^v/, "")) { console.error("package.json version does not match release tag"); process.exit(1); }'
+          test "$(cat VERSION)" = "${RELEASE_TAG#v}"
+          bash -n install.sh
+      - run: npm test
+      - run: npm run gate:secrets
+      - run: npm run gate:input-validation
+      - run: npm run gate:route-authz
+      - name: Syntax-check all gate runners
+        run: find gates -name 'run.mjs' -print0 | xargs -0 -n1 node --check
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: gh release create "$RELEASE_TAG" --verify-tag --generate-notes --title "Web Prod Skills $RELEASE_TAG"
