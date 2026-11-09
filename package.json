@@ -17,7 +17,8 @@
     "gate:observability": "node gates/pre-merge/observability-evidence/run.mjs",
     "gate:migrations": "node gates/pre-deploy/migration-safety/run.mjs",
     "gate:frontend": "node gates/pre-merge/frontend-quality/run.mjs",
-    "gate:api-contract": "node gates/pre-merge/api-contract/run.mjs"
+    "gate:api-contract": "node gates/pre-merge/api-contract/run.mjs",
+    "gate:llm-safety": "node gates/pre-merge/llm-output-safety/run.mjs"
   },
   "devDependencies": {}
 }
