@@ -1,0 +1,17 @@
+{
+  "name": "web-prod-skills",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "gate:secrets": "node gates/pre-commit/secrets-scan/run.mjs",
+    "gate:input-validation": "node gates/pre-merge/input-validation/run.mjs",
+    "gate:route-authz": "node gates/pre-merge/route-authz/run.mjs",
+    "test": "node --test",
+    "check": "npm test && npm run gate:secrets"
+  },
+  "devDependencies": {}
+}
