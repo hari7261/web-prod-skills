@@ -1,0 +1,2 @@
+severity: block
+recognized_markers: [safeParse(, parse(, validateSchema(, validateRequest(, zodResolver(]
