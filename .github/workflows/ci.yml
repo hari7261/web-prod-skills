@@ -2,11 +2,11 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, master]
 permissions:
   contents: read
 jobs:
-  gates:
+  deterministic-gates:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,3 +19,5 @@ jobs:
       - run: npm run gate:secrets
       - run: npm run gate:input-validation
       - run: npm run gate:route-authz
+      - name: Syntax-check all gate runners
+        run: find gates -name 'run.mjs' -print0 | xargs -0 -n1 node --check
