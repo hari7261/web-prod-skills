@@ -11,7 +11,13 @@
     "gate:input-validation": "node gates/pre-merge/input-validation/run.mjs",
     "gate:route-authz": "node gates/pre-merge/route-authz/run.mjs",
     "test": "node --test",
-    "check": "npm test && npm run gate:secrets"
+    "check": "npm test && npm run gate:secrets && npm run gate:input-validation && npm run gate:route-authz",
+    "gate:ai-evals": "node gates/pre-merge/ai-eval-evidence/run.mjs",
+    "gate:integrations": "node gates/pre-merge/integration-resilience/run.mjs",
+    "gate:observability": "node gates/pre-merge/observability-evidence/run.mjs",
+    "gate:migrations": "node gates/pre-deploy/migration-safety/run.mjs",
+    "gate:frontend": "node gates/pre-merge/frontend-quality/run.mjs",
+    "gate:api-contract": "node gates/pre-merge/api-contract/run.mjs"
   },
   "devDependencies": {}
 }
