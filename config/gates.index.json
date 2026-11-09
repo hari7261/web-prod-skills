@@ -82,6 +82,15 @@
       "checks": [
         "fresh-reviewed-evidence-manifest"
       ]
+    },
+    {
+      "path": "gates/pre-merge/llm-output-safety",
+      "stage": "pre-merge",
+      "name": "llm-output-safety",
+      "severity": "block",
+      "checks": [
+        "fresh-reviewed-evidence-manifest"
+      ]
     }
   ]
 }
