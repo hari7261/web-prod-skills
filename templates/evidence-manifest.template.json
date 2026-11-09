@@ -1,0 +1,12 @@
+{
+  "gate": "gates/stage/gate-name",
+  "status": "pass",
+  "generated_at": "2026-01-01T00:00:00.000Z",
+  "checks": [
+    {
+      "id": "check-id",
+      "status": "pass",
+      "evidence": "https://ci.example.invalid/job/123"
+    }
+  ]
+}
