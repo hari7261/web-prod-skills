@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "gates": [
+    {
+      "path": "gates/pre-commit/secrets-scan",
+      "stage": "pre-commit",
+      "name": "secrets-scan",
+      "severity": "block",
+      "checks": [
+        "secret-patterns-in-repository",
+        "committed-env-files"
+      ]
+    },
+    {
+      "path": "gates/pre-merge/input-validation",
+      "stage": "pre-merge",
+      "name": "input-validation",
+      "severity": "block",
+      "checks": [
+        "schema-validation-evidence"
+      ]
+    },
+    {
+      "path": "gates/pre-merge/route-authz",
+      "stage": "pre-merge",
+      "name": "route-authz",
+      "severity": "block",
+      "checks": [
+        "route-authn-authz-evidence"
+      ]
+    }
+  ]
+}
