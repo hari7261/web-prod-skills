@@ -45,6 +45,32 @@ Evidence-manifest gates validate that a reviewer-supplied manifest is complete, 
 
 Read each gate's README and limitations before using it as a release blocker.
 
+## Install in an existing project
+
+The recommended installation is source-based. It works with JavaScript/TypeScript, Python, Go and other web projects; it does not add a runtime dependency to your application.
+
+Requirements: Git and Bash (macOS/Linux, or Git Bash on Windows).
+
+From the root of your project:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/hari7261/web-prod-skills/v1.0.0/install.sh -o /tmp/install-web-prod-skills.sh
+bash /tmp/install-web-prod-skills.sh --version v1.0.0 --target .
+```
+
+Or clone the repository and run `./install.sh --version v1.0.0 --target /path/to/your/project`.
+
+The installer copies `.web-prod-skills/` (skills, gates, knowledge, indexes, templates and eval starter assets) and adds an idempotent integration block to your root `AGENTS.md`. Existing project instructions are preserved. Commit both changes to your project so your coding agent and teammates use the same version.
+
+The installer intentionally does not rewrite your CI or application code. Select the gates relevant to your stack, run them from the consuming repository, and add real framework-specific tests. For example:
+
+```sh
+node .web-prod-skills/gates/pre-commit/secrets-scan/run.mjs
+WEB_PROD_CHANGED_FILES="src/api/users.ts" node .web-prod-skills/gates/pre-merge/input-validation/run.mjs
+```
+
+The current static gates are heuristics; evidence-manifest gates require independently generated and reviewed evidence. Read each gate README before making it a blocking check. This project is distributed as a versioned Git source archive, **not as an npm package**.
+
 ## Quick start
 
 Requirements: Node.js 20+.
