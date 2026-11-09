@@ -2,14 +2,19 @@
 
 web-prod-skills is a skill + gate repo for web applications (frontend + backend + AI + integrations). skills/ tells the agent how to do production work, gates/ refuses to let it claim done without proof, knowledge/ defines the bar once, templates/ remove the excuse of wrong structure, and evals/ keep AI behavior from regressing. That combination is what makes it production, not college project.
 
-## Current implementation status
+## Implemented foundation
 
-This repository is being built in enforceable increments. The initial foundation includes the agent contract, the ten production principles, the definition of done, machine-readable skill/gate indexes, and three blocking gate entrypoints:
-- `pre-commit/secrets-scan`
-- `pre-merge/input-validation`
-- `pre-merge/route-authz`
+- Agent contract and ten-part production definition of done.
+- Frontend, backend, AI, security, reliability and integration baselines.
+- Ten indexed implementation skills across frontend, backend, AI, integrations, observability and secrets.
+- Blocking gates for secrets, input validation, route authorization, LLM output safety, prompt eval evidence, integration resilience, observability, frontend quality, API contracts and migration safety.
+- Evidence manifest template, starter eval dataset/rubric, skill/gate templates and CI workflow.
 
-The first gate implementations use conservative static heuristics. They are not substitutes for provider secret scanning, framework-aware AST analysis, SAST, or runtime security tests. A clean heuristic scan is limited evidence, not proof of production security.
+## Important gate limitations
+
+The secrets, input-validation and route-authorization runners are static heuristics. They do not replace secret-provider/history scanning, AST-aware analysis, SAST, or runtime authorization and tenant-isolation tests.
+
+Evidence-manifest gates validate that a reviewer-supplied manifest is complete, passing and no more than seven days old. They do **not** independently execute the referenced browser audits, integration tests, evals, migration tests or observability checks. CI must generate and attach genuine evidence before these gates are considered release proof.
 
 ## Agent entrypoint
 
@@ -26,12 +31,10 @@ npm run gate:input-validation
 npm run gate:route-authz
 ```
 
-Changed-file gates accept newline-separated paths in `WEB_PROD_CHANGED_FILES`. Without it, they inspect tracked source files in the current checkout.
+Evidence gates are available as `npm run gate:ai-evals`, `gate:llm-safety`, `gate:integrations`, `gate:observability`, `gate:frontend`, `gate:api-contract` and `gate:migrations`. Set `WEB_PROD_EVIDENCE_FILE` to the appropriate reviewed JSON manifest before running them.
 
-## Gate contract
-
-Each gate emits a JSON result to stdout and a human summary to stderr, returning exit code 1 on blocking findings. A gate pass only proves the checks implemented by that gate ran and passed; it does not imply unrelated production-readiness requirements are satisfied.
+Changed-file static gates accept newline-separated paths in `WEB_PROD_CHANGED_FILES`. Without it, they inspect tracked source files.
 
 ## Scope
 
-Web applications only: frontend, backend, AI features, integrations, security, observability, and delivery. Mobile-native, desktop, games, embedded systems, and pure ML research are out of scope.
+Web applications only: frontend, backend, AI features, integrations, security, observability and delivery. Mobile-native, desktop, games, embedded systems and pure ML research are out of scope.
