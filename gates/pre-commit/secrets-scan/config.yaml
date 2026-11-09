@@ -1,0 +1,4 @@
+severity: block
+scan:
+  max_file_bytes: 2000000
+  ignore_directories: [.git, node_modules, dist, coverage]
