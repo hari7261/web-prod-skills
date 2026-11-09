@@ -18,7 +18,7 @@ trap 'rm -rf "$TMP"' EXIT
 if [[ -e "$DEST" ]]; then echo "$DEST already exists; remove it before reinstalling." >&2; exit 1; fi
 git clone --quiet --depth 1 --branch "$VERSION" https://github.com/hari7261/web-prod-skills.git "$TMP/repo"
 mkdir -p "$DEST"
-cp -R "$TMP/repo/skills" "$TMP/repo/gates" "$TMP/repo/knowledge" "$TMP/repo/config" "$TMP/repo/templates" "$DEST/"
+cp -R "$TMP/repo/skills" "$TMP/repo/gates" "$TMP/repo/knowledge" "$TMP/repo/config" "$TMP/repo/templates" "$TMP/repo/evals" "$DEST/"
 cp "$TMP/repo/LICENSE" "$DEST/LICENSE"
 cp "$TMP/repo/CHANGELOG.md" "$DEST/CHANGELOG.md"
 cp "$TMP/repo/AGENTS.md" "$DEST/AGENTS.md"
