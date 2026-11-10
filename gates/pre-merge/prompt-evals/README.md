@@ -18,3 +18,4 @@ JSON report with `status: "fail"` and `findings`, exiting with code `1`.
 ```sh
 node gates/pre-merge/prompt-evals/run.mjs
 ```
+

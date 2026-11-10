@@ -21,3 +21,4 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   if (res.stderr) process.stderr.write(res.stderr);
   process.exit(res.status ?? 1);
 }
+

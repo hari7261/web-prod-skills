@@ -46,3 +46,4 @@ Passing `gates/pre-merge/sast` JSON output plus negative CORS and CSRF integrati
 
 - [Web security baseline](../../../knowledge/web-security-baseline.md)
 - [SAST gate](../../../gates/pre-merge/sast/README.md)
+

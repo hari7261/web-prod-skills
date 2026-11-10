@@ -19,3 +19,4 @@ export function registerRoutes(app: { post: Function }, deps: { logger: any; met
     }
   });
 }
+

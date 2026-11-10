@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-merge",
   checks: [{ id: "dependency-pinning-and-vulns", run: runDependencyAudit }]
 });
+

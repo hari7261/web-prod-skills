@@ -16,3 +16,4 @@ JSON report with `status: "fail"` and `findings`, exiting with code `1`.
 ```sh
 node gates/pre-deploy/production-build/run.mjs
 ```
+

@@ -7,3 +7,4 @@
   "killSwitch": true,
   "fallbackBehavior": "Serve legacy checkout handler"
 }
+

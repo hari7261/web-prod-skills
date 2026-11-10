@@ -8,3 +8,4 @@ export async function fetchOrder(id: string, deps: { logger: any; metrics: any; 
     span.end();
   }
 }
+

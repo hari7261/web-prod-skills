@@ -124,3 +124,4 @@ if (findings.length) {
   console.error(out.summary);
   process.exit(1);
 }
+

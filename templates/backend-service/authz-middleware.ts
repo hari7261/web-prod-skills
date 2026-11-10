@@ -16,3 +16,4 @@ export function authorize(ctx: AuthContext, permission: string, resourceTenantId
     throw Object.assign(new Error("Forbidden"), { statusCode: 403 });
   }
 }
+

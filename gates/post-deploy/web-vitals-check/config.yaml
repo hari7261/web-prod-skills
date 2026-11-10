@@ -3,3 +3,4 @@ severity: block
 max_lcp_ms: 2500
 max_inp_ms: 200
 max_cls: 0.1
+

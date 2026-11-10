@@ -32,3 +32,4 @@ export async function runAccessibilityCheck(context) {
   }
   return { findings };
 }
+

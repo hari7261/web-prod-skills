@@ -49,3 +49,4 @@ Typecheck/lint pass JSON output from `gates/pre-commit/lint-and-typecheck`, comp
 
 - [Principles](../../../knowledge/principles.md)
 - [Frontend baseline](../../../knowledge/frontend-baseline.md)
+

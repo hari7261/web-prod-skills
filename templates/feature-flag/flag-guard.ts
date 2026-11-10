@@ -10,3 +10,4 @@ export function isFlagEnabled(config: FlagConfig, bucket0to99: number): boolean 
   if (bucket0to99 < 0 || bucket0to99 >= 100) return config.defaultEnabled;
   return bucket0to99 < config.rolloutPercentage;
 }
+

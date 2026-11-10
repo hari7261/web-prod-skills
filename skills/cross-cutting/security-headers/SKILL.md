@@ -46,3 +46,4 @@ Integration test assertions verifying response security headers and passing `gat
 
 - [Web security baseline](../../../knowledge/web-security-baseline.md)
 - [SAST gate](../../../gates/pre-merge/sast/README.md)
+

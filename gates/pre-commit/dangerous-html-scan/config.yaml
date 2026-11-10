@@ -5,3 +5,4 @@ allowed_sanitizers:
   - sanitizeHtml
   - sanitizeUntrustedHtml
   - isomorphic-dompurify
+

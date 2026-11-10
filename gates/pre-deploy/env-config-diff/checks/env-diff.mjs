@@ -20,3 +20,4 @@ export async function runEnvConfigDiffCheck(context) {
   }
   return { findings };
 }
+

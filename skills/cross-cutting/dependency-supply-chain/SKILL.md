@@ -46,3 +46,4 @@ Passing `gates/pre-merge/dependency-audit` JSON output, committed lockfile, and 
 
 - [Web security baseline](../../../knowledge/web-security-baseline.md)
 - [Dependency audit gate](../../../gates/pre-merge/dependency-audit/README.md)
+

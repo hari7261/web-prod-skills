@@ -112,3 +112,4 @@ Passing JSON output from \`${reqGate}\` plus automated runtime test evidence.
   await writeFile(path.join(gateDir, "run.mjs"), `import path from "node:path";\nimport { fileURLToPath } from "node:url";\nimport { runGate } from "../../../scripts/lib/gate-runner.mjs";\nimport { runCheck } from "./checks/default.mjs";\n\nconst gateDir = path.dirname(fileURLToPath(import.meta.url));\nawait runGate({ gateDir, gateId: "${stage}/${name}", stage: "${stage}", checks: [{ id: "default", run: runCheck }] });\n`);
   console.log(`Scaffolded gate at ${gateDir}`);
 }
+

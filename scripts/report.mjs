@@ -51,3 +51,4 @@ if (failed > 0) {
   console.error(`[FAIL] ${failed} of ${results.length} gate(s) failed.`);
   process.exit(1);
 }
+

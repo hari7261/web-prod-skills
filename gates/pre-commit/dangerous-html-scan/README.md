@@ -16,3 +16,4 @@ JSON report with `status: "fail"` and `findings` array, exiting with code `1`.
 ```sh
 node gates/pre-commit/dangerous-html-scan/run.mjs
 ```
+

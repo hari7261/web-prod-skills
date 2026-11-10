@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-deploy",
   checks: [{ id: "env-config-diff-review", run: runEnvConfigDiffCheck }]
 });
+

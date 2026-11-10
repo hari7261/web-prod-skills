@@ -36,11 +36,11 @@
 Requirements: Git, Bash (macOS/Linux, or Git Bash on Windows), and Node.js 20+.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/hari7261/web-prod-skills/v2.0.0/install.sh -o /tmp/install-web-prod-skills.sh
-bash /tmp/install-web-prod-skills.sh --version v2.0.0 --target .
+curl -fsSL https://raw.githubusercontent.com/hari7261/web-prod-skills/v2.0.1/install.sh -o /tmp/install-web-prod-skills.sh
+bash /tmp/install-web-prod-skills.sh --version v2.0.1 --target .
 ```
 
-Or clone the repository and run `./install.sh --version v2.0.0 --target /path/to/your/project`.
+Or clone the repository and run `./install.sh --version v2.0.1 --target /path/to/your/project`.
 
 The installer copies `.web-prod-skills/` (`skills/`, `gates/`, `knowledge/`, `config/`, `templates/`, `evals/`, `scripts/`) and adds an idempotent integration block to your root `AGENTS.md`.
 

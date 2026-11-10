@@ -4,3 +4,4 @@ model: gpt-4o-mini
 max_tokens: 400
 system: |
   Summarize the ticket clearly and safely.
+

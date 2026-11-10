@@ -3,3 +3,4 @@ export function register(app: any) {
     return res.json([]);
   });
 }
+

@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-merge",
   checks: [{ id: "openapi-breaking-diff", run: runContractDiffCheck }]
 });
+

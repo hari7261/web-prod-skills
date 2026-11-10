@@ -4,3 +4,4 @@ export function register(app: any, validateSchema: any) {
     return res.json(parsed);
   });
 }
+

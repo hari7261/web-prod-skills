@@ -16,3 +16,4 @@ JSON report with `status: "fail"` and `findings` array (`id`, `file`, `message`)
 ```sh
 node gates/pre-commit/lint-and-typecheck/run.mjs
 ```
+

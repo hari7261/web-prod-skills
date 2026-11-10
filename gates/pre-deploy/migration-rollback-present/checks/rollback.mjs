@@ -26,3 +26,4 @@ export async function runMigrationRollbackCheck(context) {
   }
   return { findings };
 }
+

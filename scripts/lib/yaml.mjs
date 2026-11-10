@@ -129,3 +129,4 @@ export function parseFrontmatter(markdown) {
   const body = normalized.slice(end + 5);
   return { frontmatter: parseYaml(yamlText), body };
 }
+

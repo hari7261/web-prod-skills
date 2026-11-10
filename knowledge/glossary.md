@@ -18,3 +18,4 @@ Shared production-engineering vocabulary used across `knowledge/`, `skills/`, `g
 - **Runbook:** Step-by-step operational guide for triaging, mitigating, and rolling back a specific service or failure mode, with named ownership.
 - **SLO (Service Level Objective):** Target reliability/latency threshold (e.g., p99 < 400ms, availability >= 99.9%) measured over a rolling window and tied to alerts.
 - **Trust boundary:** Any boundary where data crosses from an untrusted or less-trusted context (browser, webhook, third-party API, LLM, queue) into application logic.
+

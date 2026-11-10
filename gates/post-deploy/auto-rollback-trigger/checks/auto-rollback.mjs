@@ -24,3 +24,4 @@ export async function runAutoRollbackCheck(context) {
   }
   return { findings };
 }
+

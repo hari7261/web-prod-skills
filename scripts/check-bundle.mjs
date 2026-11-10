@@ -64,3 +64,4 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   console.log(JSON.stringify({ tool: "check-bundle", status: findings.length ? "fail" : "pass", findings }, null, 2));
   if (findings.length) process.exit(1);
 }
+

@@ -47,3 +47,4 @@ Passing `gates/pre-merge/observability-presence` output, DLQ/retry config, and i
 
 - [Reliability baseline](../../../knowledge/reliability-baseline.md)
 - [Observability presence gate](../../../gates/pre-merge/observability-presence/README.md)
+

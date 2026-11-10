@@ -3,3 +3,4 @@ severity: block
 max_high_vulns: 0
 max_critical_vulns: 0
 require_pinned_versions: true
+

@@ -29,3 +29,4 @@ Use this checklist before approving any PR or claiming any task done. Used by `g
 - [ ] DB migrations include a dry-run lock check and a tested down-migration.
 - [ ] Deploy plan includes canary %, observation window, abort criteria, env config diff, runbook, and tested rollback.
 - [ ] Every required gate ran on the exact commit and exited `0` with JSON + human summary attached.
+

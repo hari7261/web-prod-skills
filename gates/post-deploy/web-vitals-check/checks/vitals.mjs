@@ -19,3 +19,4 @@ export async function runWebVitalsCheck(context) {
   if (Number(report.cls ?? 0) > maxCls) findings.push({ id: "CLS_BREACH", actual: report.cls, budget: maxCls, message: `CLS ${report.cls} > ${maxCls}.` });
   return { findings };
 }
+

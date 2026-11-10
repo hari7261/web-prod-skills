@@ -4,3 +4,4 @@ export function register(app: any, requireAuth: any, authorize: any) {
     return res.json([]);
   });
 }
+

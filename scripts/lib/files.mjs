@@ -4,6 +4,7 @@ import { execFileSync } from "node:child_process";
 
 const DEFAULT_IGNORED_DIRS = new Set([
   ".git",
+  ".web-prod-skills",
   "node_modules",
   "dist",
   "build",

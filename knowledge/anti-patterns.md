@@ -26,3 +26,4 @@ Any PR or change containing these patterns must be rejected until fixed and re-v
 - **REJECT:** Database migration without a tested down-migration (`rollback`) and lock-time analysis.
 - **REJECT:** New network, DB, or LLM path without structured logs, metrics, and trace spans.
 - **REJECT:** Production deploy without a canary plan (with abort criteria) and tested rollback procedure.
+

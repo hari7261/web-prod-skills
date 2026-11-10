@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-commit",
   checks: [{ id: "dangerous-html-sinks", run: runHtmlSinkCheck }]
 });
+

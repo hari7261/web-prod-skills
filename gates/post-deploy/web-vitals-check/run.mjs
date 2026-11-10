@@ -10,3 +10,4 @@ await runGate({
   stage: "post-deploy",
   checks: [{ id: "core-web-vitals-targets", run: runWebVitalsCheck }]
 });
+

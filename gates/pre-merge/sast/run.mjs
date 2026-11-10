@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-merge",
   checks: [{ id: "static-security-analysis", run: runSastCheck }]
 });
+

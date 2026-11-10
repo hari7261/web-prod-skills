@@ -55,3 +55,4 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   console.log(JSON.stringify({ tool: "smoke-test", status: findings.length ? "fail" : "pass", findings }, null, 2));
   if (findings.length) process.exit(1);
 }
+

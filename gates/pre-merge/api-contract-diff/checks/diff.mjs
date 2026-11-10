@@ -4,3 +4,4 @@ export async function runContractDiffCheck(context) {
   const findings = await checkContractDiff({ targetDir: context.targetDir });
   return { findings };
 }
+

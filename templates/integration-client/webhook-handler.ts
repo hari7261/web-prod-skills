@@ -10,3 +10,4 @@ export function verifyWebhookSignature(rawBody: Buffer, signatureHeader: string,
   const expectedBuf = Buffer.from(expected, "utf8");
   return providedBuf.length === expectedBuf.length && timingSafeEqual(providedBuf, expectedBuf);
 }
+

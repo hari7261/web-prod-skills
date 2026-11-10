@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-deploy",
   checks: [{ id: "migration-dry-run-and-locks", run: runMigrationDryRunCheck }]
 });
+

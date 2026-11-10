@@ -50,3 +50,4 @@ Zero violations in `gates/pre-merge/accessibility` JSON output (`a11y-report.jso
 
 - [Frontend baseline](../../../knowledge/frontend-baseline.md)
 - [Accessibility gate](../../../gates/pre-merge/accessibility/README.md)
+

@@ -28,3 +28,4 @@ Use `node scripts/scaffold.mjs` to generate compliant skill, gate, or template f
 node scripts/scaffold.mjs --type skill --domain backend --name example-skill --gate gates/pre-merge/input-validation
 node scripts/scaffold.mjs --type gate --stage pre-merge --name example-gate
 ```
+

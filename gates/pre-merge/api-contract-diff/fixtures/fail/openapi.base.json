@@ -1,1 +1,16 @@
-{"info":{"version":"1.0.0"},"paths":{"/items":{"get":{"response":{"fields":{"id":"string"}}}}}}
+{
+    "info": {
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/items": {
+            "get": {
+                "response": {
+                    "fields": {
+                        "id": "string"
+                    }
+                }
+            }
+        }
+    }
+}

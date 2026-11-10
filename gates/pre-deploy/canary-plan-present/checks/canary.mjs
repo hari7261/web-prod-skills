@@ -30,3 +30,4 @@ export async function runCanaryPlanCheck(context) {
   }
   return { findings };
 }
+

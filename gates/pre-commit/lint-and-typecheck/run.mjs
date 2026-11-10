@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-commit",
   checks: [{ id: "lint-and-syntax", run: runLintCheck }]
 });
+

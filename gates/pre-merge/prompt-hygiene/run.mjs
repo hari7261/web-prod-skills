@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-merge",
   checks: [{ id: "versioned-prompt-hygiene", run: runPromptHygieneCheck }]
 });
+

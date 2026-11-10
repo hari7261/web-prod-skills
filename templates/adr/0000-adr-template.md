@@ -12,3 +12,4 @@ Describe the chosen design and why alternatives were rejected.
 
 ## Consequences & Rollback
 Document operational overhead, cost bounds, migration strategy, and how to reverse this decision safely.
+

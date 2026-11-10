@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
-VERSION="${WEB_PROD_SKILLS_VERSION:-v2.0.0}"
+VERSION="${WEB_PROD_SKILLS_VERSION:-v2.0.1}"
 TARGET="."
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --version) VERSION="${2:?missing version}"; shift 2 ;;
     --target) TARGET="${2:?missing target directory}"; shift 2 ;;
-    -h|--help) echo "Usage: install.sh [--version v2.0.0] [--target ./]"; exit 0 ;;
+    -h|--help) echo "Usage: install.sh [--version v2.0.1] [--target ./]"; exit 0 ;;
     *) echo "Unknown argument: $1" >&2; exit 2 ;;
   esac
 done

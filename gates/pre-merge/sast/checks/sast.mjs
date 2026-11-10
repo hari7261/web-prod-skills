@@ -37,3 +37,4 @@ export async function runSastCheck(context) {
   }
   return { findings };
 }
+

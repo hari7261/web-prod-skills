@@ -11,3 +11,4 @@
 - Max string length: explicit per field (e.g., name <= 120, bio <= 2000).
 - Max array items: explicit ceiling (e.g., batch IDs <= 100).
 - Max pagination limit: <= 100.
+

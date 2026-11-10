@@ -7,3 +7,4 @@ export async function runSmokeGateCheck(context) {
   });
   return { findings };
 }
+

@@ -49,3 +49,4 @@ Passing `gates/pre-commit/dangerous-html-scan` JSON output and XSS unit/integrat
 
 - [Web security baseline](../../../knowledge/web-security-baseline.md)
 - [Dangerous HTML scan gate](../../../gates/pre-commit/dangerous-html-scan/README.md)
+

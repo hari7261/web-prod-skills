@@ -45,3 +45,4 @@ Passing `gates/pre-merge/sast` and `gates/pre-merge/observability-presence` outp
 
 - [Anti-patterns](../../../knowledge/anti-patterns.md)
 - [Reliability baseline](../../../knowledge/reliability-baseline.md)
+

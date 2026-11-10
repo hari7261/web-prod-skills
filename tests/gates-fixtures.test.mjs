@@ -24,3 +24,4 @@ for (const gate of gatesIdx.gates) {
     assert.ok(failJson.findings.length > 0, `Expected findings on ${failDir}`);
   });
 }
+

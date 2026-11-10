@@ -53,3 +53,4 @@ test("webhook safety script detects missing signature/replay defenses on unsafe 
   const passRes = spawnSync(process.execPath, [script, "--target", path.resolve("templates/integration-client")], { encoding: "utf8" });
   assert.equal(passRes.status, 0, passRes.stdout + "\n" + passRes.stderr);
 });
+

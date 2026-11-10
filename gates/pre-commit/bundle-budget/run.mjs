@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-commit",
   checks: [{ id: "bundle-size-and-regression", run: runBundleCheck }]
 });
+

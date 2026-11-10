@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-merge",
   checks: [{ id: "unit-integration-and-coverage", run: runTestCoverageCheck }]
 });
+

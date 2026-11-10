@@ -2,3 +2,4 @@ version: 1
 severity: block
 require_major_bump_on_breaking: true
 require_changelog_entry: true
+

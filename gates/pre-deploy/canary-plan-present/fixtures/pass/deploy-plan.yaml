@@ -3,3 +3,4 @@ observation_window_minutes: 15
 abort_criteria:
   - 5xx_error_rate > 1%
   - p99_latency_ms > 600
+

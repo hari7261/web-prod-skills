@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-deploy",
   checks: [{ id: "down-migration-present-and-tested", run: runMigrationRollbackCheck }]
 });
+

@@ -4,3 +4,4 @@ export function register(app: any) {
     return res.status(400).end();
   });
 }
+

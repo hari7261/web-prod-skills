@@ -3,3 +3,4 @@ severity: block
 allow_debugger: false
 check_json: true
 check_js_syntax: true
+

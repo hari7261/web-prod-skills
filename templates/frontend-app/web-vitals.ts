@@ -10,3 +10,4 @@ export function evaluateWebVital(sample: WebVitalSample) {
   const budget = TARGETS[sample.name];
   return { ...sample, budget, withinBudget: sample.value <= budget };
 }
+

@@ -48,3 +48,4 @@ Integration tests proving zero duplicate side effects under concurrent/sequentia
 
 - [Reliability baseline](../../../knowledge/reliability-baseline.md)
 - [Backend baseline](../../../knowledge/backend-baseline.md)
+

@@ -48,3 +48,4 @@ Passing `gates/pre-merge/input-validation` and `gates/pre-merge/accessibility` o
 
 - [Principles](../../../knowledge/principles.md)
 - [Frontend baseline](../../../knowledge/frontend-baseline.md)
+

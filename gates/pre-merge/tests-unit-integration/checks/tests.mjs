@@ -25,8 +25,10 @@ export async function runTestCoverageCheck(context) {
   }
 
   const testFiles = context.files.filter((f) => /\.(?:test|spec)\.[jt]sx?$|\.test\.mjs$|_test\.go$|test_.*\.py$/.test(f));
-  if (context.config.require_test_files !== false && testFiles.length === 0) {
+  const sourceFiles = context.files.filter((f) => /\.(?:[jt]sx?|mjs|py|go)$/.test(f) && !testFiles.includes(f));
+  if (context.config.require_test_files !== false && sourceFiles.length > 0 && testFiles.length === 0) {
     findings.push({ id: "NO_TEST_FILES_FOUND", message: "No unit or integration test files found in target." });
   }
   return { findings };
 }
+

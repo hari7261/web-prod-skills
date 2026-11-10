@@ -46,3 +46,4 @@ Passing `gates/pre-merge/observability-presence` JSON output, sample trace/log o
 
 - [Principles](../../../knowledge/principles.md)
 - [Observability presence gate](../../../gates/pre-merge/observability-presence/README.md)
+

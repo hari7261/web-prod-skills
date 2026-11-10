@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1] - 2026-11-10
+
+### Fixed
+- Ignore `.web-prod-skills/` when scanning a consuming project so installed gate runners and templates are not flagged as application code.
+- Only require test files in `pre-merge/tests-unit-integration` when source files are present.
+- Normalized trailing newlines across repository files.
+
 ## [2.0.0] - 2026-11-10
 
 End-to-end production-ready release implementing the complete 49-skill, 27-gate, template, eval, and tooling specification.

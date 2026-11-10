@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-merge",
   checks: [{ id: "wcag-aa-a11y", run: runAccessibilityCheck }]
 });
+

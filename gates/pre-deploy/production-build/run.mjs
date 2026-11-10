@@ -10,3 +10,4 @@ await runGate({
   stage: "pre-deploy",
   checks: [{ id: "production-build-and-hash", run: runProductionBuildCheck }]
 });
+
