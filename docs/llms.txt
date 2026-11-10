@@ -7,13 +7,14 @@ Repository: https://github.com/hari7261/web-prod-skills
 License: MIT
 
 ## Contents
-- Agent contract and production definition of done.
-- Ten skills and ten quality/security gates.
-- Engineering knowledge baselines, templates, starter eval dataset and rubric.
-- GitHub Actions CI and Pages deployment workflow.
+- Agent contract and mandatory production-readiness Definition of Done (`AGENTS.md`).
+- 49 modular skills across frontend, backend, AI features, integrations, cross-cutting, and delivery.
+- 27 executable gates across pre-commit, pre-merge, pre-deploy, and post-deploy stages with pass/fail fixtures.
+- 11 engineering knowledge baselines, 8 starter template suites, golden eval datasets/rubrics/runner, and CLI scripts.
+- GitHub Actions CI, nightly eval sweep, Pages deployment, and tagged release workflows.
 
 ## Limitations
-Some gates are static heuristics. Other gates validate reviewer-supplied evidence manifests and do not independently execute referenced tests. Read the README and gate limitations; a passing manifest is not proof of production safety.
+Static heuristic gates and report-validating gates complement—never replace—application-specific runtime unit, integration, security, and canary tests in consuming projects.
 
 ## Documentation
 - [README](https://github.com/hari7261/web-prod-skills#readme)
@@ -21,5 +22,6 @@ Some gates are static heuristics. Other gates validate reviewer-supplied evidenc
 - [Skills index](https://github.com/hari7261/web-prod-skills/blob/main/config/skills.index.json)
 - [Gates index](https://github.com/hari7261/web-prod-skills/blob/main/config/gates.index.json)
 - [Knowledge baselines](https://github.com/hari7261/web-prod-skills/tree/main/knowledge)
+- [Templates](https://github.com/hari7261/web-prod-skills/tree/main/templates)
 - [Evals](https://github.com/hari7261/web-prod-skills/tree/main/evals)
 - [License](https://github.com/hari7261/web-prod-skills/blob/main/LICENSE)

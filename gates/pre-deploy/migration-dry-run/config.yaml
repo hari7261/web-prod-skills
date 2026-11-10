@@ -1,0 +1,4 @@
+version: 1
+severity: block
+max_lock_ms: 2000
+require_lock_timeout: true

@@ -1,0 +1,6 @@
+{
+  "healthy": true,
+  "rollbackCommand": "kubectl rollout undo deployment/web-api",
+  "rollbackTriggered": false,
+  "incidentUrl": ""
+}

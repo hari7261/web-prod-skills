@@ -1,4 +1,4 @@
+version: 1
 severity: block
-scan:
-  max_file_bytes: 2000000
-  ignore_directories: [.git, node_modules, dist, coverage]
+allow_env_examples: true
+scan_client_bundles: true

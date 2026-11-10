@@ -1,0 +1,5 @@
+version: 1
+severity: block
+require_logs: true
+require_metrics: true
+require_traces: true

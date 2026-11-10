@@ -1,0 +1,4 @@
+version: 1
+severity: block
+max_delta_pct: 0.5
+min_observation_minutes: 10

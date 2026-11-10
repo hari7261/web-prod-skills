@@ -1,3 +1,11 @@
 # Pre-deploy gates
 
-This stage is reserved for release-specific evidence gates. Migration safety is implemented at `migration-safety/`. Add new gates here only with a documented input contract, deterministic runner, fixtures, and CI integration.
+Release-readiness checks executed before shifting production traffic:
+- `production-build`
+- `migration-dry-run`
+- `migration-rollback-present`
+- `env-config-diff`
+- `canary-plan-present`
+- `rollback-plan-present`
+
+See `config/gates.index.json` for the canonical index.

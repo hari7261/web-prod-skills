@@ -1,0 +1,5 @@
+version: 1
+severity: block
+max_route_js_kb: 250
+max_total_js_kb: 800
+max_regression_pct: 10

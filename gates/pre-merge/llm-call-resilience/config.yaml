@@ -1,0 +1,5 @@
+version: 1
+severity: block
+max_timeout_ms: 15000
+max_tokens_cap: 4096
+require_fallback: true

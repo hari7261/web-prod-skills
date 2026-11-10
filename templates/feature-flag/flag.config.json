@@ -1,0 +1,9 @@
+{
+  "key": "new_checkout_flow",
+  "owner": "team-checkout",
+  "defaultEnabled": false,
+  "rolloutPercentage": 5,
+  "expiresAt": "2027-01-15",
+  "killSwitch": true,
+  "fallbackBehavior": "Serve legacy checkout handler"
+}

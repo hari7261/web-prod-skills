@@ -1,3 +1,10 @@
 # Post-deploy gates
 
-Post-deploy checks must validate live canary health, SLOs, error rates, dependency health, and rollback triggers. No post-deploy gate is declared complete until it has a safe target-environment contract and executable fixtures.
+Live verification and automated safety triggers executed during and after rollout:
+- `smoke-tests`
+- `error-rate-vs-baseline`
+- `slo-check`
+- `web-vitals-check`
+- `auto-rollback-trigger`
+
+See `config/gates.index.json` for the canonical index.

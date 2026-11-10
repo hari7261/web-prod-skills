@@ -1,0 +1,4 @@
+version: 1
+severity: block
+min_coverage_pct: 80
+require_test_files: true

@@ -1,0 +1,3 @@
+version: 1
+severity: block
+timeout_ms: 5000

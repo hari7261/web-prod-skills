@@ -1,0 +1,4 @@
+version: 1
+severity: block
+max_inline_prompt_chars: 100
+require_prompt_metadata: true

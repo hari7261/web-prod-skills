@@ -1,123 +1,88 @@
 # Web Prod Skills
 
-**Production-readiness skills, security gates and engineering standards for AI coding agents and web application teams.**
+> `web-prod-skills` is a skill + gate repo for **web applications** (frontend + backend + AI + integrations). `skills/` tells the agent how to do production work, `gates/` refuses to let it claim done without proof, `knowledge/` defines the bar once, `templates/` remove the excuse of wrong structure, and `evals/` keep AI behavior from regressing. That combination is what makes it **production, not college project**.
 
 [![CI](https://github.com/hari7261/web-prod-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/hari7261/web-prod-skills/actions/workflows/ci.yml)
+[![Nightly](https://github.com/hari7261/web-prod-skills/actions/workflows/nightly.yml/badge.svg)](https://github.com/hari7261/web-prod-skills/actions/workflows/nightly.yml)
 [![Deploy Pages](https://github.com/hari7261/web-prod-skills/actions/workflows/pages.yml/badge.svg)](https://github.com/hari7261/web-prod-skills/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **Project website:** https://hari7261.github.io/web-prod-skills/  
 **Repository:** https://github.com/hari7261/web-prod-skills
 
-Web Prod Skills is an open-source toolkit for making AI-assisted web engineering more systematic and auditable. It provides reusable agent instructions, implementation skills, engineering baselines, quality/security gates, starter eval assets and CI automation.
-
 ## What is included
 
-- **Agent contract:** `AGENTS.md` defines repository-level expectations and a production-oriented definition of done.
-- **10 indexed skills:** secrets management, input validation, authentication/authorization, LLM output safety, prompt/eval versioning, external integrations, observability, database migrations, accessibility/performance and API contracts.
-- **10 indexed gates:** secrets scan, input validation, route authorization, AI eval evidence, integration resilience, observability evidence, frontend quality, API contract, migration safety and LLM output safety.
-- **Knowledge baselines:** web security, reliability, AI features, frontend, backend and integrations.
-- **Templates and evals:** skill/gate templates, evidence manifest, starter JSONL dataset and scoring rubric.
-- **Automation:** GitHub Actions CI and a static documentation site deployed with GitHub Pages.
-
-## Documentation website and publishing
-
-The website source lives in `docs/` in this repository. It is intentionally static (no build framework or runtime dependency).
-
-After the Pages workflow is merged into `main` and GitHub Pages is configured to use **GitHub Actions**, every push to `main` automatically rebuilds the generated skills/gates catalog and deploys the site, so changes to repository indexes and other source files are reflected without a separate manual website edit. The workflow can also be started manually.
-
-The site includes:
-- Search-oriented title, description and relevant topic metadata.
-- Canonical URL, Open Graph and Twitter metadata.
-- Schema.org `SoftwareSourceCode` structured data.
-- `robots.txt`, XML sitemap and an `llms.txt` discovery file.
-- Direct links to source documentation, indexes, skills, gates and license.
-
-SEO and GEO (Generative Engine Optimization) improve discoverability signals; they do **not** guarantee indexing, rankings, citations or inclusion in AI chatbot answers. Search engines and AI products independently decide whether and when to crawl, index and cite public content. Submit the sitemap in Google Search Console and Bing Webmaster Tools after deployment, and keep substantive, accurate documentation on the canonical site and repository.
-
-## Implemented foundation and limitations
-
-This repository is an evolving engineering foundation, **not a certification or guarantee of production safety**.
-
-The secrets, input-validation and route-authorization runners are static heuristics. They do not replace provider secret scanning, history scanning, AST-aware analysis, SAST, or runtime authorization and tenant-isolation tests.
-
-Evidence-manifest gates validate that a reviewer-supplied manifest is complete, passing and no more than seven days old. They do **not** independently execute the referenced browser audits, integration tests, evals, migration tests or observability checks. A passing manifest proves only that the declared evidence was supplied in the expected format. Consuming projects must generate genuine evidence tied to the exact commit.
-
-Read each gate's README and limitations before using it as a release blocker.
+- **Agent contract (`AGENTS.md`):** Mandatory load order, scope boundary, and operating rules.
+- **11 knowledge baselines (`knowledge/`):** Principles, Definition of Done, web security, reliability, AI features, frontend, backend, integrations, anti-patterns, review checklist, and glossary.
+- **49 indexed skills (`skills/`):**
+  - `frontend/` (9): `component-architecture`, `state-management`, `accessibility`, `performance-budget`, `ssr-hydration-safety`, `error-boundaries`, `forms-and-validation`, `safe-rendering`, `i18n-and-timezone`
+  - `backend/` (11): `api-contract-first`, `input-validation`, `authn-authz`, `multi-tenancy`, `rate-limiting`, `idempotency`, `pagination-and-filtering`, `db-migrations`, `background-jobs`, `file-uploads`, `query-performance`
+  - `ai-features/` (10): `llm-integration`, `prompt-management`, `output-guardrails`, `prompt-injection-defense`, `rag-pipeline`, `streaming-safety`, `eval-harness`, `cost-and-token-budget`, `model-fallback`, `pii-redaction`
+  - `integrations/` (5): `third-party-api-client`, `webhook-handling`, `oauth-flows`, `quota-and-degradation`, `payment-integrations`
+  - `cross-cutting/` (9): `secrets-management`, `observability`, `error-handling`, `logging-pii-scrubbing`, `feature-flags`, `caching`, `security-headers`, `cors-and-csrf`, `dependency-supply-chain`
+  - `delivery/` (5): `ci-pipeline`, `deployment-strategy`, `rollback`, `incident-runbook`, `postmortem`
+- **27 executable gates (`gates/`):**
+  - `pre-commit/` (4): `lint-and-typecheck`, `secrets-scan`, `dangerous-html-scan`, `bundle-budget`
+  - `pre-merge/` (12): `tests-unit-integration`, `accessibility`, `api-contract-diff`, `input-validation`, `route-authz`, `sast`, `dependency-audit`, `observability-presence`, `llm-call-resilience`, `prompt-hygiene`, `output-guardrails`, `prompt-evals`
+  - `pre-deploy/` (6): `production-build`, `migration-dry-run`, `migration-rollback-present`, `env-config-diff`, `canary-plan-present`, `rollback-plan-present`
+  - `post-deploy/` (5): `smoke-tests`, `error-rate-vs-baseline`, `slo-check`, `web-vitals-check`, `auto-rollback-trigger`
+- **8 template suites (`templates/`):** `frontend-app/`, `backend-service/`, `ai-endpoint/`, `integration-client/`, `migration/`, `feature-flag/`, `runbook/`, `adr/`, plus skill, gate, and evidence templates.
+- **Golden evaluation suites (`evals/`):** `prompt-injection`, `output-guardrails`, `rag-accuracy`, and `refusal-safety` golden sets, rubrics, baselines, and deterministic runner.
+- **CLI tooling (`scripts/`):** `scan-secrets.mjs`, `check-bundle.mjs`, `contract-diff.mjs`, `run-evals.mjs`, `smoke-test.mjs`, `check-telemetry.mjs`, `report.mjs`, `scaffold.mjs`, and `build-site.mjs`.
+- **Automation (`tests/`, `docs/`, `.github/workflows/`):** Automated contract & fixture tests, GitHub Pages catalog site, CI, nightly eval sweep, and tagged release publishing.
 
 ## Install in an existing project
 
-The recommended installation is source-based. It works with JavaScript/TypeScript, Python, Go and other web projects; it does not add a runtime dependency to your application.
-
-Requirements: Git and Bash (macOS/Linux, or Git Bash on Windows).
-
-From the root of your project:
+Requirements: Git, Bash (macOS/Linux, or Git Bash on Windows), and Node.js 20+.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/hari7261/web-prod-skills/v1.0.0/install.sh -o /tmp/install-web-prod-skills.sh
-bash /tmp/install-web-prod-skills.sh --version v1.0.0 --target .
+curl -fsSL https://raw.githubusercontent.com/hari7261/web-prod-skills/v2.0.0/install.sh -o /tmp/install-web-prod-skills.sh
+bash /tmp/install-web-prod-skills.sh --version v2.0.0 --target .
 ```
 
-Or clone the repository and run `./install.sh --version v1.0.0 --target /path/to/your/project`.
+Or clone the repository and run `./install.sh --version v2.0.0 --target /path/to/your/project`.
 
-The installer copies `.web-prod-skills/` (skills, gates, knowledge, indexes, templates and eval starter assets) and adds an idempotent integration block to your root `AGENTS.md`. Existing project instructions are preserved. Commit both changes to your project so your coding agent and teammates use the same version.
-
-The installer intentionally does not rewrite your CI or application code. Select the gates relevant to your stack, run them from the consuming repository, and add real framework-specific tests. For example:
-
-```sh
-node .web-prod-skills/gates/pre-commit/secrets-scan/run.mjs
-WEB_PROD_CHANGED_FILES="src/api/users.ts" node .web-prod-skills/gates/pre-merge/input-validation/run.mjs
-```
-
-The current static gates are heuristics; evidence-manifest gates require independently generated and reviewed evidence. Read each gate README before making it a blocking check. This project is distributed as a versioned Git source archive, **not as an npm package**.
+The installer copies `.web-prod-skills/` (`skills/`, `gates/`, `knowledge/`, `config/`, `templates/`, `evals/`, `scripts/`) and adds an idempotent integration block to your root `AGENTS.md`.
 
 ## Quick start
 
-Requirements: Node.js 20+.
-
 ```sh
 npm test
-npm run gate:secrets
-npm run gate:input-validation
-npm run gate:route-authz
+npm run evals
+npm run report
 ```
 
-Evidence-manifest gates are available through:
+Run an individual gate against your project or a specific directory:
 
 ```sh
-npm run gate:ai-evals
-npm run gate:llm-safety
-npm run gate:integrations
-npm run gate:observability
-npm run gate:frontend
-npm run gate:api-contract
-npm run gate:migrations
+node gates/pre-commit/secrets-scan/run.mjs --target .
+WEB_PROD_CHANGED_FILES="src/api/users.ts" node gates/pre-merge/input-validation/run.mjs
 ```
 
-Set `WEB_PROD_EVIDENCE_FILE` to the appropriate reviewed JSON manifest before running an evidence gate. Changed-file static gates accept newline-separated paths in `WEB_PROD_CHANGED_FILES`; without it, they inspect tracked source files.
+## Implemented foundation and limitations
+
+This repository is an engineering standard and gate harness, **not a substitute for runtime security, load, and integration testing in your application**. Static heuristic checks detect common missing controls and unsafe sinks, while report-driven gates (`bundle-budget`, `tests-unit-integration`, `accessibility`, `production-build`, `post-deploy/*`) validate structured outputs produced by your build, test, and telemetry pipelines.
 
 ## Repository map
 
 | Path | Purpose |
 |---|---|
-| `AGENTS.md` | Agent contract and repository workflow |
-| `skills/` | Indexed implementation skills |
-| `gates/` | Static and evidence-manifest gates |
-| `knowledge/` | Shared engineering baselines |
-| `config/` | Skill and gate indexes |
-| `templates/` | Reusable authoring templates |
-| `evals/` | Starter LLM evaluation data and rubric |
-| `tests/` | Automated tests for repository tooling |
-| `docs/` | Public project website and crawler metadata |
-| `.github/workflows/` | CI and Pages deployment |
+| `AGENTS.md` | Agent contract, load order, and operating rules |
+| `CONTRIBUTING.md` | Contribution rules and scaffolding guide |
+| `knowledge/` | 11 shared production baselines, anti-patterns, checklist, and glossary |
+| `config/` | Canonical `skills.index.json`, `gates.index.json`, and `severity-levels.yaml` |
+| `skills/` | 49 modular skills across 6 web domains |
+| `gates/` | 27 deterministic gates across 4 delivery stages with checks and fixtures |
+| `templates/` | 8 starter templates plus skill/gate/evidence templates |
+| `evals/` | Golden sets, rubrics, baselines, and deterministic eval runner |
+| `scripts/` | Shared gate runner library and CLI tools |
+| `tests/` | Automated repository contract, fixture, eval, and tooling tests |
+| `docs/` | Public GitHub Pages site and crawler metadata |
+| `.github/workflows/` | CI, nightly eval sweep, Pages deploy, and tagged release workflows |
 
 ## Scope
 
-Web applications: frontend, backend, AI features, integrations, security, observability and delivery. Mobile-native apps, desktop apps, games, embedded systems and pure ML research are out of scope.
-
-## Contributing
-
-Read [AGENTS.md](AGENTS.md), preserve the documented skill/gate contracts, add tests for behavior changes, and never claim a gate passed without executing it or verifying current-commit CI evidence. See [CHANGELOG.md](CHANGELOG.md) for project history.
+Web applications only: frontend, backend, AI features, integrations, cross-cutting security/observability, and delivery. Mobile-native apps, desktop apps, games, embedded/firmware, pure ML research, and non-web CLIs are out of scope.
 
 ## License
 

@@ -1,0 +1,6 @@
+{
+  "checks": [
+    { "name": "GET /health", "statusCode": 200, "status": "pass" },
+    { "name": "POST /api/v1/auth/session", "statusCode": 200, "status": "pass" }
+  ]
+}

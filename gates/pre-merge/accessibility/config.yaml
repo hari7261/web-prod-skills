@@ -1,0 +1,4 @@
+version: 1
+severity: block
+wcag_level: AA
+max_violations: 0

@@ -1,13 +1,18 @@
-# Route authorization gate
+# pre-merge/route-authz
 
-**Enforces:** production-readiness 2 (security).
+## Production-readiness items enforced
+- 2. Security
 
-**Inputs:** changed-file evidence via `WEB_PROD_CHANGED_FILES`; otherwise tracked source files.
+## Inputs
+- Changed or tracked route/controller files (`.js`, `.ts`, `.mjs`, `.py`, `.go`).
 
-**Checks:** route-like files must show recognized authentication and authorization evidence, or a reasoned `WEB-PROD-AUTHZ-EXEMPT` annotation. The marker heuristic is not proof of correct policy or tenant isolation. Security integration tests remain mandatory.
+## Pass criteria
+- Every route file includes recognized authentication and authorization/tenant-isolation controls or a reasoned `WEB-PROD-AUTHZ-EXEMPT: <reason>` comment.
 
-**Pass criteria:** zero route files missing either evidence marker. Exit 1 on findings.
+## Failure message format
+JSON report with `status: "fail"` and `findings`, exiting with code `1`.
 
-**Failure format:** JSON on stdout and human summary on stderr.
-
-**Run:** `npm run gate:route-authz`.
+## How to run
+```sh
+node gates/pre-merge/route-authz/run.mjs
+```

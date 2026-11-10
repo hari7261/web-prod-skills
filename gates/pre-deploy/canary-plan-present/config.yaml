@@ -1,0 +1,4 @@
+version: 1
+severity: block
+max_initial_canary_percent: 25
+min_observation_minutes: 10

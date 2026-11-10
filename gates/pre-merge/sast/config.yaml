@@ -1,0 +1,4 @@
+version: 1
+severity: block
+max_high: 0
+max_critical: 0

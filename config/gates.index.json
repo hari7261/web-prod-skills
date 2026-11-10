@@ -1,96 +1,35 @@
 {
-  "version": 1,
+  "version": 2,
   "gates": [
-    {
-      "path": "gates/pre-commit/secrets-scan",
-      "stage": "pre-commit",
-      "name": "secrets-scan",
-      "severity": "block",
-      "checks": [
-        "secret-patterns-in-repository",
-        "committed-env-files"
-      ]
-    },
-    {
-      "path": "gates/pre-merge/input-validation",
-      "stage": "pre-merge",
-      "name": "input-validation",
-      "severity": "block",
-      "checks": [
-        "fresh-reviewed-evidence-manifest"
-      ]
-    },
-    {
-      "path": "gates/pre-merge/route-authz",
-      "stage": "pre-merge",
-      "name": "route-authz",
-      "severity": "block",
-      "checks": [
-        "fresh-reviewed-evidence-manifest"
-      ]
-    },
-    {
-      "path": "gates/pre-merge/ai-eval-evidence",
-      "stage": "pre-merge",
-      "name": "ai-eval-evidence",
-      "severity": "block",
-      "checks": [
-        "fresh-reviewed-evidence-manifest"
-      ]
-    },
-    {
-      "path": "gates/pre-merge/integration-resilience",
-      "stage": "pre-merge",
-      "name": "integration-resilience",
-      "severity": "block",
-      "checks": [
-        "fresh-reviewed-evidence-manifest"
-      ]
-    },
-    {
-      "path": "gates/pre-merge/observability-evidence",
-      "stage": "pre-merge",
-      "name": "observability-evidence",
-      "severity": "block",
-      "checks": [
-        "fresh-reviewed-evidence-manifest"
-      ]
-    },
-    {
-      "path": "gates/pre-merge/frontend-quality",
-      "stage": "pre-merge",
-      "name": "frontend-quality",
-      "severity": "block",
-      "checks": [
-        "fresh-reviewed-evidence-manifest"
-      ]
-    },
-    {
-      "path": "gates/pre-merge/api-contract",
-      "stage": "pre-merge",
-      "name": "api-contract",
-      "severity": "block",
-      "checks": [
-        "fresh-reviewed-evidence-manifest"
-      ]
-    },
-    {
-      "path": "gates/pre-deploy/migration-safety",
-      "stage": "pre-deploy",
-      "name": "migration-safety",
-      "severity": "block",
-      "checks": [
-        "fresh-reviewed-evidence-manifest"
-      ]
-    },
-    {
-      "path": "gates/pre-merge/llm-output-safety",
-      "stage": "pre-merge",
-      "name": "llm-output-safety",
-      "severity": "block",
-      "checks": [
-        "fresh-reviewed-evidence-manifest"
-      ]
-    }
+    { "path": "gates/pre-commit/lint-and-typecheck", "stage": "pre-commit", "name": "lint-and-typecheck", "severity": "block", "checks": ["lint-and-syntax"] },
+    { "path": "gates/pre-commit/secrets-scan", "stage": "pre-commit", "name": "secrets-scan", "severity": "block", "checks": ["secrets-and-env-scan"] },
+    { "path": "gates/pre-commit/dangerous-html-scan", "stage": "pre-commit", "name": "dangerous-html-scan", "severity": "block", "checks": ["dangerous-html-sinks"] },
+    { "path": "gates/pre-commit/bundle-budget", "stage": "pre-commit", "name": "bundle-budget", "severity": "block", "checks": ["bundle-size-and-regression"] },
+
+    { "path": "gates/pre-merge/tests-unit-integration", "stage": "pre-merge", "name": "tests-unit-integration", "severity": "block", "checks": ["unit-integration-and-coverage"] },
+    { "path": "gates/pre-merge/accessibility", "stage": "pre-merge", "name": "accessibility", "severity": "block", "checks": ["wcag-aa-a11y"] },
+    { "path": "gates/pre-merge/api-contract-diff", "stage": "pre-merge", "name": "api-contract-diff", "severity": "block", "checks": ["openapi-breaking-diff"] },
+    { "path": "gates/pre-merge/input-validation", "stage": "pre-merge", "name": "input-validation", "severity": "block", "checks": ["boundary-schema-validation"] },
+    { "path": "gates/pre-merge/route-authz", "stage": "pre-merge", "name": "route-authz", "severity": "block", "checks": ["route-authn-authz-tenant-scope"] },
+    { "path": "gates/pre-merge/sast", "stage": "pre-merge", "name": "sast", "severity": "block", "checks": ["static-security-analysis"] },
+    { "path": "gates/pre-merge/dependency-audit", "stage": "pre-merge", "name": "dependency-audit", "severity": "block", "checks": ["dependency-pinning-and-vulns"] },
+    { "path": "gates/pre-merge/observability-presence", "stage": "pre-merge", "name": "observability-presence", "severity": "block", "checks": ["logs-metrics-traces-presence"] },
+    { "path": "gates/pre-merge/llm-call-resilience", "stage": "pre-merge", "name": "llm-call-resilience", "severity": "block", "checks": ["llm-timeout-retry-fallback-budget"] },
+    { "path": "gates/pre-merge/prompt-hygiene", "stage": "pre-merge", "name": "prompt-hygiene", "severity": "block", "checks": ["versioned-prompt-hygiene"] },
+    { "path": "gates/pre-merge/output-guardrails", "stage": "pre-merge", "name": "output-guardrails", "severity": "block", "checks": ["llm-output-validation-and-sinks"] },
+    { "path": "gates/pre-merge/prompt-evals", "stage": "pre-merge", "name": "prompt-evals", "severity": "block", "checks": ["golden-set-regression-check"] },
+
+    { "path": "gates/pre-deploy/production-build", "stage": "pre-deploy", "name": "production-build", "severity": "block", "checks": ["production-build-and-hash"] },
+    { "path": "gates/pre-deploy/migration-dry-run", "stage": "pre-deploy", "name": "migration-dry-run", "severity": "block", "checks": ["migration-dry-run-and-locks"] },
+    { "path": "gates/pre-deploy/migration-rollback-present", "stage": "pre-deploy", "name": "migration-rollback-present", "severity": "block", "checks": ["down-migration-present-and-tested"] },
+    { "path": "gates/pre-deploy/env-config-diff", "stage": "pre-deploy", "name": "env-config-diff", "severity": "block", "checks": ["env-config-diff-review"] },
+    { "path": "gates/pre-deploy/canary-plan-present", "stage": "pre-deploy", "name": "canary-plan-present", "severity": "block", "checks": ["canary-plan-and-abort-criteria"] },
+    { "path": "gates/pre-deploy/rollback-plan-present", "stage": "pre-deploy", "name": "rollback-plan-present", "severity": "block", "checks": ["deploy-rollback-documented-and-tested"] },
+
+    { "path": "gates/post-deploy/smoke-tests", "stage": "post-deploy", "name": "smoke-tests", "severity": "block", "checks": ["critical-path-smoke-tests"] },
+    { "path": "gates/post-deploy/error-rate-vs-baseline", "stage": "post-deploy", "name": "error-rate-vs-baseline", "severity": "block", "checks": ["error-rate-vs-baseline"] },
+    { "path": "gates/post-deploy/slo-check", "stage": "post-deploy", "name": "slo-check", "severity": "block", "checks": ["slo-budget-compliance"] },
+    { "path": "gates/post-deploy/web-vitals-check", "stage": "post-deploy", "name": "web-vitals-check", "severity": "block", "checks": ["core-web-vitals-targets"] },
+    { "path": "gates/post-deploy/auto-rollback-trigger", "stage": "post-deploy", "name": "auto-rollback-trigger", "severity": "block", "checks": ["auto-rollback-and-incident-record"] }
   ]
 }

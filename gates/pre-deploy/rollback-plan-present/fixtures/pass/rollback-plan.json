@@ -1,0 +1,6 @@
+{
+  "targetVersion": "v1.9.4",
+  "command": "kubectl rollout undo deployment/web-api",
+  "tested": true,
+  "owner": "team-platform"
+}

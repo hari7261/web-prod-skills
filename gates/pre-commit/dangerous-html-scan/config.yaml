@@ -1,0 +1,7 @@
+version: 1
+severity: block
+allowed_sanitizers:
+  - DOMPurify
+  - sanitizeHtml
+  - sanitizeUntrustedHtml
+  - isomorphic-dompurify

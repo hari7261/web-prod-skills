@@ -1,2 +1,12 @@
+version: 1
 severity: block
-recognized_markers: [safeParse(, parse(, validateSchema(, validateRequest(, zodResolver(]
+reject_unknown_fields: true
+markers:
+  - safeParse(
+  - validateSchema(
+  - validateRequest(
+  - .parse(
+  - schema.validate(
+  - validate_request(
+  - ShouldBind
+  - DecodeAndValidate

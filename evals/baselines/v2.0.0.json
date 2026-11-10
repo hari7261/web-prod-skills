@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "updated_at": "2026-11-10T00:00:00.000Z",
+  "thresholds": {
+    "prompt-injection": 1.0,
+    "output-guardrails": 1.0,
+    "rag-accuracy": 0.9,
+    "refusal-safety": 1.0
+  },
+  "overall_minimum": 0.95,
+  "max_avg_latency_ms": 2500,
+  "max_avg_cost_usd": 0.02
+}

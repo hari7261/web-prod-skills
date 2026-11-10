@@ -1,12 +1,12 @@
 ---
 name: secrets-management
-version: 1.0.0
-description: Keep credentials out of source, artifacts, logs, and client bundles.
-applies_to: [frontend, backend, ci]
+version: 2.0.0
+description: Keep credentials, API keys, and private keys out of source code, frontend bundles, committed env files, and logs.
+applies_to: [web, security]
 triggers:
-  - adding credentials or provider configuration
-  - changing environment variables or deployment secrets
-  - investigating suspected credential exposure
+  - adding configuration or credentials
+  - handling API keys, tokens, or signing secrets
+  - reviewing secrets or environment variables
 requires_gate: gates/pre-commit/secrets-scan
 resources: []
 scripts: []
@@ -14,44 +14,36 @@ scripts: []
 
 ## 1. When to use / when not to use
 
-Use whenever code, configuration, CI, logs, build artifacts, or operational procedures touch credentials. Public configuration such as an OAuth client ID is not automatically a secret, but must still be classified.
+Use whenever configuring credentials, API keys, webhooks, OAuth secrets, signing keys, or database URLs.
 
 ## 2. Non-negotiables
 
-- Store secrets in an approved secret manager or deployment secret store.
-- Never expose server credentials to browser bundles or public build variables.
-- Never commit live `.env` files, private keys, tokens, or credentials.
-- Redact authorization headers, cookies, tokens and sensitive provider payloads from logs.
-- Rotate credentials immediately after suspected exposure; deleting the file does not revoke the secret.
-- Use least-privilege credentials and separate environments.
+- Inject secrets strictly at runtime from a secret manager or deployment environment; never commit `.env` files (only `.env.example` with placeholder values).
+- Never expose server secrets in `NEXT_PUBLIC_*`, `VITE_*`, client bundles, SSR hydration payloads, or URL query strings.
+- Validate required runtime secrets at process startup and fail fast if missing.
+- Rotate any credential immediately if detected in git history, logs, or artifacts.
 
 ## 3. Rejection criteria
 
-Reject committed credentials, secrets embedded in frontend code, credentials passed through query strings, unredacted auth logs, shared production/development credentials, or a rotation plan that depends only on deleting Git history.
+Fail the task if secrets appear in source, client bundles, committed `.env` files, or logs, or if `gates/pre-commit/secrets-scan` fails.
 
 ## 4. Step-by-step procedure
 
-1. Classify the value and identify where it executes (browser, server, CI, operator workstation).
-2. Select the approved secret store and define access policy.
-3. Inject at runtime; expose only explicitly public values to client builds.
-4. Redact telemetry and error reporting.
-5. Add rotation and revocation instructions.
-6. Run the secrets gate and provider scanning.
-7. If exposure occurred, revoke/rotate first, then purge affected artifacts/history as appropriate.
+1. Document required variables in `.env.example` without real values.
+2. Validate environment configuration at server boot.
+3. Verify zero secret leakage into client bundles or structured logs.
+4. Run `gates/pre-commit/secrets-scan` and attach JSON output.
 
 ## 5. Evidence required
 
-Secrets gate JSON, secret-store reference/configuration, access policy, and rotation evidence where relevant. A clean working-tree scan does not prove Git history or build artifacts are clean.
+Passing JSON output from `gates/pre-commit/secrets-scan` and clean startup config validation.
 
 ## 6. Anti-patterns
 
-- **REJECT:** `NEXT_PUBLIC_*`, `VITE_*` or equivalent prefixes for private credentials.
-- **REJECT:** logging complete request headers or provider errors with embedded tokens.
-- **REJECT:** committing encrypted secrets without a reviewed key-management design.
-- **REJECT:** assuming deleting a secret from the latest commit makes it safe.
+- **REJECT:** Hardcoded API keys, private keys, or default fallback secrets (`secret || "dev-secret"`).
+- **REJECT:** Committing `.env` or `.env.production` to git.
 
 ## 7. References
 
 - [Principles](../../../knowledge/principles.md)
-- [Web security baseline](../../../knowledge/web-security-baseline.md)
 - [Secrets scan gate](../../../gates/pre-commit/secrets-scan/README.md)

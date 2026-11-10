@@ -1,160 +1,59 @@
 {
-  "version": 1,
+  "version": 2,
   "skills": [
-    {
-      "name": "secrets-management",
-      "path": "skills/cross-cutting/secrets-management/SKILL.md",
-      "applies_to": [
-        "web"
-      ],
-      "triggers": [
-        "adding configuration",
-        "handling credentials",
-        "reviewing secrets"
-      ],
-      "requires_gate": [
-        "gates/pre-commit/secrets-scan"
-      ]
-    },
-    {
-      "name": "input-validation",
-      "path": "skills/backend/input-validation/SKILL.md",
-      "applies_to": [
-        "backend",
-        "api"
-      ],
-      "triggers": [
-        "adding or changing an HTTP endpoint",
-        "parsing request body/query/params/headers",
-        "consuming webhook payloads"
-      ],
-      "requires_gate": [
-        "gates/pre-merge/input-validation"
-      ]
-    },
-    {
-      "name": "authn-authz",
-      "path": "skills/backend/authn-authz/SKILL.md",
-      "applies_to": [
-        "backend",
-        "api"
-      ],
-      "triggers": [
-        "adding or changing a route",
-        "accessing tenant-scoped resources",
-        "changing authentication or authorization"
-      ],
-      "requires_gate": [
-        "gates/pre-merge/route-authz"
-      ]
-    },
-    {
-      "name": "llm-output-safety",
-      "path": "skills/ai/llm-output-safety/SKILL.md",
-      "applies_to": [
-        "ai",
-        "backend",
-        "frontend"
-      ],
-      "triggers": [
-        "rendering model output",
-        "using model output to trigger tools"
-      ],
-      "requires_gate": [
-        "gates/pre-merge/llm-output-safety"
-      ]
-    },
-    {
-      "name": "prompt-versioning-evals",
-      "path": "skills/ai/prompt-versioning-evals/SKILL.md",
-      "applies_to": [
-        "ai",
-        "backend"
-      ],
-      "triggers": [
-        "editing production prompts",
-        "changing model or retrieval configuration"
-      ],
-      "requires_gate": [
-        "gates/pre-merge/ai-eval-evidence"
-      ]
-    },
-    {
-      "name": "external-integrations",
-      "path": "skills/integrations/external-integrations/SKILL.md",
-      "applies_to": [
-        "backend",
-        "integrations"
-      ],
-      "triggers": [
-        "provider API integration",
-        "webhooks",
-        "OAuth"
-      ],
-      "requires_gate": [
-        "gates/pre-merge/integration-resilience"
-      ]
-    },
-    {
-      "name": "production-observability",
-      "path": "skills/observability/production-observability/SKILL.md",
-      "applies_to": [
-        "frontend",
-        "backend",
-        "ai",
-        "integrations"
-      ],
-      "triggers": [
-        "new network/database/LLM path",
-        "changing SLOs or alerts"
-      ],
-      "requires_gate": [
-        "gates/pre-merge/observability-evidence"
-      ]
-    },
-    {
-      "name": "database-migrations",
-      "path": "skills/backend/database-migrations/SKILL.md",
-      "applies_to": [
-        "backend",
-        "database"
-      ],
-      "triggers": [
-        "schema or data migration",
-        "backfills"
-      ],
-      "requires_gate": [
-        "gates/pre-deploy/migration-safety"
-      ]
-    },
-    {
-      "name": "accessibility-performance",
-      "path": "skills/frontend/accessibility-performance/SKILL.md",
-      "applies_to": [
-        "frontend"
-      ],
-      "triggers": [
-        "user-facing UI changes",
-        "routing or bundle changes"
-      ],
-      "requires_gate": [
-        "gates/pre-merge/frontend-quality"
-      ]
-    },
-    {
-      "name": "api-contracts",
-      "path": "skills/backend/api-contracts/SKILL.md",
-      "applies_to": [
-        "backend",
-        "api"
-      ],
-      "triggers": [
-        "API endpoint or schema changes",
-        "pagination or error contract changes"
-      ],
-      "requires_gate": [
-        "gates/pre-merge/api-contract"
-      ]
-    }
+    { "name": "component-architecture", "path": "skills/frontend/component-architecture/SKILL.md", "applies_to": ["frontend", "ui"], "triggers": ["creating or refactoring UI components", "splitting server and client component boundaries"], "requires_gate": ["gates/pre-commit/lint-and-typecheck"] },
+    { "name": "state-management", "path": "skills/frontend/state-management/SKILL.md", "applies_to": ["frontend", "ui"], "triggers": ["adding global or shared client state", "implementing optimistic updates or server cache invalidation"], "requires_gate": ["gates/pre-merge/tests-unit-integration"] },
+    { "name": "accessibility", "path": "skills/frontend/accessibility/SKILL.md", "applies_to": ["frontend", "ui"], "triggers": ["adding or modifying user-facing UI components", "building forms, modals, menus, tables, or navigation"], "requires_gate": ["gates/pre-merge/accessibility"] },
+    { "name": "performance-budget", "path": "skills/frontend/performance-budget/SKILL.md", "applies_to": ["frontend", "performance"], "triggers": ["adding frontend dependencies", "modifying routes, layouts, or media loading"], "requires_gate": ["gates/pre-commit/bundle-budget"] },
+    { "name": "ssr-hydration-safety", "path": "skills/frontend/ssr-hydration-safety/SKILL.md", "applies_to": ["frontend", "ssr"], "triggers": ["implementing SSR, RSC, or streaming HTML rendering", "accessing window, document, or localStorage in shared components"], "requires_gate": ["gates/pre-merge/tests-unit-integration"] },
+    { "name": "error-boundaries", "path": "skills/frontend/error-boundaries/SKILL.md", "applies_to": ["frontend", "ui"], "triggers": ["adding new page routes or layout shells", "rendering third-party widgets or dynamic data visualizations"], "requires_gate": ["gates/pre-merge/tests-unit-integration"] },
+    { "name": "forms-and-validation", "path": "skills/frontend/forms-and-validation/SKILL.md", "applies_to": ["frontend", "ui"], "triggers": ["creating or modifying user input forms", "submitting mutations from browser UI"], "requires_gate": ["gates/pre-merge/input-validation"] },
+    { "name": "safe-rendering", "path": "skills/frontend/safe-rendering/SKILL.md", "applies_to": ["frontend", "security", "ai"], "triggers": ["rendering markdown, rich text, HTML, or SVG", "displaying LLM-generated text or citations in the UI"], "requires_gate": ["gates/pre-commit/dangerous-html-scan"] },
+    { "name": "i18n-and-timezone", "path": "skills/frontend/i18n-and-timezone/SKILL.md", "applies_to": ["frontend", "ui"], "triggers": ["formatting dates, times, numbers, or currencies", "adding multi-language copy or RTL layout support"], "requires_gate": ["gates/pre-merge/tests-unit-integration"] },
+
+    { "name": "api-contract-first", "path": "skills/backend/api-contract-first/SKILL.md", "applies_to": ["backend", "api"], "triggers": ["adding or changing REST, GraphQL, or tRPC endpoints", "changing request or response schemas"], "requires_gate": ["gates/pre-merge/api-contract-diff"] },
+    { "name": "input-validation", "path": "skills/backend/input-validation/SKILL.md", "applies_to": ["backend", "api"], "triggers": ["adding or changing an HTTP endpoint", "parsing request body/query/params/headers", "consuming webhook payloads"], "requires_gate": ["gates/pre-merge/input-validation"] },
+    { "name": "authn-authz", "path": "skills/backend/authn-authz/SKILL.md", "applies_to": ["backend", "api", "security"], "triggers": ["adding or changing a server route or resolver", "implementing login, session, JWT, or API key checks"], "requires_gate": ["gates/pre-merge/route-authz"] },
+    { "name": "multi-tenancy", "path": "skills/backend/multi-tenancy/SKILL.md", "applies_to": ["backend", "database", "security"], "triggers": ["storing or querying tenant-owned data", "implementing tenant-scoped RAG retrieval or webhooks"], "requires_gate": ["gates/pre-merge/route-authz"] },
+    { "name": "rate-limiting", "path": "skills/backend/rate-limiting/SKILL.md", "applies_to": ["backend", "api", "security"], "triggers": ["adding public, auth, password-reset, or OTP endpoints", "exposing AI generation, search, or export endpoints"], "requires_gate": ["gates/pre-merge/sast"] },
+    { "name": "idempotency", "path": "skills/backend/idempotency/SKILL.md", "applies_to": ["backend", "api", "reliability"], "triggers": ["implementing POST/PUT/PATCH mutations with side effects", "handling payment charges, refunds, or order creation"], "requires_gate": ["gates/pre-merge/tests-unit-integration"] },
+    { "name": "pagination-and-filtering", "path": "skills/backend/pagination-and-filtering/SKILL.md", "applies_to": ["backend", "api", "database"], "triggers": ["adding list or search API endpoints", "adding sort, filter, or pagination query params"], "requires_gate": ["gates/pre-merge/input-validation"] },
+    { "name": "db-migrations", "path": "skills/backend/db-migrations/SKILL.md", "applies_to": ["backend", "database", "delivery"], "triggers": ["modifying database tables, columns, indexes, or constraints", "writing data backfills"], "requires_gate": ["gates/pre-deploy/migration-dry-run"] },
+    { "name": "background-jobs", "path": "skills/backend/background-jobs/SKILL.md", "applies_to": ["backend", "reliability"], "triggers": ["adding async queues, workers, cron jobs, or event consumers", "offloading slow email, webhook, AI, or export tasks"], "requires_gate": ["gates/pre-merge/observability-presence"] },
+    { "name": "file-uploads", "path": "skills/backend/file-uploads/SKILL.md", "applies_to": ["backend", "security"], "triggers": ["implementing file upload endpoints or presigned URLs", "parsing multipart forms, CSVs, PDFs, or images"], "requires_gate": ["gates/pre-merge/input-validation"] },
+    { "name": "query-performance", "path": "skills/backend/query-performance/SKILL.md", "applies_to": ["backend", "database", "performance"], "triggers": ["writing ORM or SQL queries inside loops or resolvers", "configuring database connection pools"], "requires_gate": ["gates/pre-merge/observability-presence"] },
+
+    { "name": "llm-integration", "path": "skills/ai-features/llm-integration/SKILL.md", "applies_to": ["ai", "backend"], "triggers": ["adding or changing an LLM provider call", "building an AI-backed API endpoint"], "requires_gate": ["gates/pre-merge/llm-call-resilience"] },
+    { "name": "prompt-management", "path": "skills/ai-features/prompt-management/SKILL.md", "applies_to": ["ai", "backend"], "triggers": ["creating or editing a production prompt", "changing model ID, temperature, or system instructions"], "requires_gate": ["gates/pre-merge/prompt-hygiene"] },
+    { "name": "output-guardrails", "path": "skills/ai-features/output-guardrails/SKILL.md", "applies_to": ["ai", "backend", "frontend", "security"], "triggers": ["consuming LLM output in backend logic or UI", "executing tool calls proposed by a model"], "requires_gate": ["gates/pre-merge/output-guardrails"] },
+    { "name": "prompt-injection-defense", "path": "skills/ai-features/prompt-injection-defense/SKILL.md", "applies_to": ["ai", "security"], "triggers": ["passing user input, web pages, emails, or RAG documents into LLM context", "connecting an LLM to tools or external data sources"], "requires_gate": ["gates/pre-merge/prompt-evals"] },
+    { "name": "rag-pipeline", "path": "skills/ai-features/rag-pipeline/SKILL.md", "applies_to": ["ai", "backend", "database"], "triggers": ["implementing vector search, chunking, or retrieval-augmented generation", "indexing customer or knowledge-base documents"], "requires_gate": ["gates/pre-merge/prompt-evals"] },
+    { "name": "streaming-safety", "path": "skills/ai-features/streaming-safety/SKILL.md", "applies_to": ["ai", "backend", "frontend"], "triggers": ["implementing SSE or WebSocket LLM token streaming", "handling mid-stream errors, disconnects, or tool calls"], "requires_gate": ["gates/pre-merge/llm-call-resilience"] },
+    { "name": "eval-harness", "path": "skills/ai-features/eval-harness/SKILL.md", "applies_to": ["ai", "delivery"], "triggers": ["changing prompts, models, temperatures, tools, or retrieval logic", "adding new AI evaluation cases or rubrics"], "requires_gate": ["gates/pre-merge/prompt-evals"] },
+    { "name": "cost-and-token-budget", "path": "skills/ai-features/cost-and-token-budget/SKILL.md", "applies_to": ["ai", "backend", "cost"], "triggers": ["adding AI endpoints, embeddings, or autonomous agent loops", "configuring model parameters or tenant quotas"], "requires_gate": ["gates/pre-merge/llm-call-resilience"] },
+    { "name": "model-fallback", "path": "skills/ai-features/model-fallback/SKILL.md", "applies_to": ["ai", "reliability"], "triggers": ["calling external LLM providers in user-facing flows", "configuring multi-model routing or circuit breakers"], "requires_gate": ["gates/pre-merge/llm-call-resilience"] },
+    { "name": "pii-redaction", "path": "skills/ai-features/pii-redaction/SKILL.md", "applies_to": ["ai", "security", "privacy"], "triggers": ["sending user or customer text to third-party LLM APIs", "logging AI prompts, completions, or building eval datasets"], "requires_gate": ["gates/pre-merge/output-guardrails"] },
+
+    { "name": "third-party-api-client", "path": "skills/integrations/third-party-api-client/SKILL.md", "applies_to": ["backend", "integrations"], "triggers": ["calling an external SaaS or partner HTTP API", "fetching user-provided URLs or metadata"], "requires_gate": ["gates/pre-merge/observability-presence"] },
+    { "name": "webhook-handling", "path": "skills/integrations/webhook-handling/SKILL.md", "applies_to": ["backend", "integrations", "security"], "triggers": ["receiving inbound webhooks from Stripe, GitHub, Slack, or partners", "verifying webhook signatures or replay protection"], "requires_gate": ["gates/pre-merge/sast"] },
+    { "name": "oauth-flows", "path": "skills/integrations/oauth-flows/SKILL.md", "applies_to": ["backend", "integrations", "security"], "triggers": ["adding social login or OAuth 2.0 / OIDC integrations", "storing or refreshing third-party OAuth access/refresh tokens"], "requires_gate": ["gates/pre-merge/route-authz"] },
+    { "name": "quota-and-degradation", "path": "skills/integrations/quota-and-degradation/SKILL.md", "applies_to": ["backend", "integrations", "reliability"], "triggers": ["integrating rate-limited or metered third-party APIs", "defining fallback UX when external dependencies degrade"], "requires_gate": ["gates/pre-merge/llm-call-resilience"] },
+    { "name": "payment-integrations", "path": "skills/integrations/payment-integrations/SKILL.md", "applies_to": ["backend", "integrations", "security"], "triggers": ["integrating Stripe, PayPal, Razorpay, or billing/subscription flows", "handling checkout, refunds, or entitlement updates"], "requires_gate": ["gates/pre-merge/sast"] },
+
+    { "name": "secrets-management", "path": "skills/cross-cutting/secrets-management/SKILL.md", "applies_to": ["web", "security"], "triggers": ["adding configuration or credentials", "handling API keys, tokens, or signing secrets", "reviewing secrets or environment variables"], "requires_gate": ["gates/pre-commit/secrets-scan"] },
+    { "name": "observability", "path": "skills/cross-cutting/observability/SKILL.md", "applies_to": ["frontend", "backend", "ai", "integrations"], "triggers": ["adding a new network, database, queue, or LLM call", "configuring SLO dashboards or alerts"], "requires_gate": ["gates/pre-merge/observability-presence"] },
+    { "name": "error-handling", "path": "skills/cross-cutting/error-handling/SKILL.md", "applies_to": ["backend", "frontend", "cross-cutting"], "triggers": ["writing try/catch blocks or error middleware", "mapping internal failures to HTTP/GraphQL errors"], "requires_gate": ["gates/pre-merge/observability-presence"] },
+    { "name": "logging-pii-scrubbing", "path": "skills/cross-cutting/logging-pii-scrubbing/SKILL.md", "applies_to": ["backend", "frontend", "ai", "security"], "triggers": ["adding structured logging or request/response logging middleware", "configuring Sentry, OpenTelemetry, or error reporters"], "requires_gate": ["gates/pre-merge/observability-presence"] },
+    { "name": "feature-flags", "path": "skills/cross-cutting/feature-flags/SKILL.md", "applies_to": ["frontend", "backend", "delivery"], "triggers": ["shipping risky or incremental product features", "decoupling code deploy from feature release"], "requires_gate": ["gates/pre-deploy/env-config-diff"] },
+    { "name": "caching", "path": "skills/cross-cutting/caching/SKILL.md", "applies_to": ["backend", "frontend", "performance"], "triggers": ["adding Cache-Control headers, CDN caching, or Redis/memory caches", "caching authenticated or personalized API responses"], "requires_gate": ["gates/pre-merge/tests-unit-integration"] },
+    { "name": "security-headers", "path": "skills/cross-cutting/security-headers/SKILL.md", "applies_to": ["frontend", "backend", "security"], "triggers": ["configuring HTTP server, reverse proxy, or Next.js/Express security middleware", "updating Content-Security-Policy or framing rules"], "requires_gate": ["gates/pre-merge/sast"] },
+    { "name": "cors-and-csrf", "path": "skills/cross-cutting/cors-and-csrf/SKILL.md", "applies_to": ["backend", "frontend", "security"], "triggers": ["configuring CORS middleware or API access-control headers", "building cookie-authenticated POST/PUT/PATCH/DELETE endpoints"], "requires_gate": ["gates/pre-merge/sast"] },
+    { "name": "dependency-supply-chain", "path": "skills/cross-cutting/dependency-supply-chain/SKILL.md", "applies_to": ["web", "security", "delivery"], "triggers": ["adding, upgrading, or removing dependencies", "reviewing lockfiles, vulnerability scans, or SBOMs"], "requires_gate": ["gates/pre-merge/dependency-audit"] },
+
+    { "name": "ci-pipeline", "path": "skills/delivery/ci-pipeline/SKILL.md", "applies_to": ["delivery", "security"], "triggers": ["creating or modifying GitHub Actions or CI workflows", "configuring build artifact hashing or release automation"], "requires_gate": ["gates/pre-deploy/production-build"] },
+    { "name": "deployment-strategy", "path": "skills/delivery/deployment-strategy/SKILL.md", "applies_to": ["delivery", "reliability"], "triggers": ["planning or executing a production deployment", "configuring canary, blue-green, or progressive traffic shifting"], "requires_gate": ["gates/pre-deploy/canary-plan-present"] },
+    { "name": "rollback", "path": "skills/delivery/rollback/SKILL.md", "applies_to": ["delivery", "reliability"], "triggers": ["preparing a production release or infrastructure change", "configuring automated post-deploy rollback hooks"], "requires_gate": ["gates/pre-deploy/rollback-plan-present"] },
+    { "name": "incident-runbook", "path": "skills/delivery/incident-runbook/SKILL.md", "applies_to": ["delivery", "reliability"], "triggers": ["launching a new web service, endpoint, or integration", "adding or modifying production alerts"], "requires_gate": ["gates/post-deploy/auto-rollback-trigger"] },
+    { "name": "postmortem", "path": "skills/delivery/postmortem/SKILL.md", "applies_to": ["delivery", "reliability"], "triggers": ["recovering from a production incident or automated rollback", "investigating an SLO or error-budget breach"], "requires_gate": ["gates/post-deploy/slo-check"] }
   ]
 }

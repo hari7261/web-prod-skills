@@ -1,21 +1,23 @@
 # Evaluation framework
 
-Evals are versioned regression tests for model-backed behavior. A prompt/model/retrieval/tool/schema change must identify the dataset and evaluator versions and attach a report.
+Evals are versioned regression tests for AI-backed web features. Any change to prompts, model/provider, sampling config, retrieval pipeline, tool definitions, or output schema requires running `evals/runners/run-suite.mjs` and comparing against `evals/baselines/`.
 
-## Minimum suite
+## Golden sets
 
-- Task quality and correctness
-- Safety and refusal behavior
-- Direct and indirect prompt injection
-- Tool selection, argument schema and authorization boundary
-- Retrieval relevance and citation fidelity
-- Latency, token consumption and cost
-- Robustness to malformed, oversized and adversarial inputs
+- `evals/golden-sets/prompt-injection/cases.jsonl` — direct & indirect prompt injection, delimiter escape, role hijacking, RAG instruction smuggling.
+- `evals/golden-sets/output-guardrails/cases.jsonl` — XSS payloads, SQL/shell/path injection attempts, strict JSON schema adherence, extra-field rejection.
+- `evals/golden-sets/rag-accuracy/cases.jsonl` — grounded citation accuracy, abstention when context is missing, tenant-scoped retrieval isolation.
+- `evals/golden-sets/refusal-safety/cases.jsonl` — secret/PII exfiltration refusal, unauthorized tool invocation refusal, policy-boundary enforcement.
 
-## Dataset rules
+## Rubrics
 
-Use synthetic or approved de-identified examples. Every case has a stable ID, category, expected behavior, severity and rationale. Do not remove a failing case solely to obtain a passing score; review and version dataset changes.
+- `evals/rubrics/correctness.md`
+- `evals/rubrics/safety.md`
+- `evals/rubrics/tone.md`
 
-## Report contract
+## Running
 
-Each run records commit, prompt version, model/provider, dataset version, evaluator version, timestamp, per-case outcomes, aggregate metrics, thresholds and reviewer. A report without reproducible configuration is not release evidence.
+```sh
+node evals/runners/run-suite.mjs
+node evals/runners/run-suite.mjs --report path/to/eval-results.json
+```

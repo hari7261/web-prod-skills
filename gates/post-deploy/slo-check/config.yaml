@@ -1,0 +1,4 @@
+version: 1
+severity: block
+min_availability_pct: 99.9
+max_p99_latency_ms: 400

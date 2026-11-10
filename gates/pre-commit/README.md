@@ -1,3 +1,9 @@
 # Pre-commit gates
 
-Fast local checks. Current gate: secrets scan. See `config/gates.index.json` for the canonical index.
+Fast local checks executed before committing:
+- `lint-and-typecheck`
+- `secrets-scan`
+- `dangerous-html-scan`
+- `bundle-budget`
+
+See `config/gates.index.json` for the canonical index.

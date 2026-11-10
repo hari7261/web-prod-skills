@@ -27,11 +27,10 @@ jobs:
           test "$(cat VERSION)" = "${RELEASE_TAG#v}"
           bash -n install.sh
       - run: npm test
-      - run: npm run gate:secrets
-      - run: npm run gate:input-validation
-      - run: npm run gate:route-authz
-      - name: Syntax-check all gate runners
-        run: find gates -name 'run.mjs' -print0 | xargs -0 -n1 node --check
+      - run: npm run evals
+      - run: npm run report
+      - name: Syntax-check all gate runners and scripts
+        run: find gates scripts evals -path '*/fixtures/*' -prune -o -name '*.mjs' -print0 | xargs -0 -n1 node --check
       - name: Create GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}

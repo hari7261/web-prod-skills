@@ -1,1 +1,4 @@
+version: 1
 severity: block
+require_authentication: true
+require_authorization: true

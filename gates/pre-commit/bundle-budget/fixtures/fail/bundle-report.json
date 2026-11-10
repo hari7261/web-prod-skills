@@ -1,0 +1,6 @@
+{
+  "totalJsKb": 950,
+  "routes": [
+    { "path": "/dashboard", "jsKb": 340, "baselineKb": 200 }
+  ]
+}

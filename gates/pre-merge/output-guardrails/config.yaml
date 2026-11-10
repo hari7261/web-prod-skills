@@ -1,0 +1,3 @@
+version: 1
+severity: block
+require_output_validator: true

@@ -1,13 +1,18 @@
-# Input validation gate
+# pre-merge/input-validation
 
-**Enforces:** production-readiness 1 (correctness) and 2 (security).
+## Production-readiness items enforced
+- 2. Security
 
-**Inputs:** changed-file evidence supplied through `WEB_PROD_CHANGED_FILES` (newline-separated paths). If unset, scans tracked source files from the current checkout.
+## Inputs
+- Changed or tracked backend handler source files (`.js`, `.ts`, `.mjs`, `.py`, `.go`).
 
-**Checks:** every changed server handler must contain a recognized schema-validation marker or an explicit allowlisted exemption comment with a reason. This deliberately conservative heuristic cannot prove runtime schema correctness; pair it with framework-specific integration tests.
+## Pass criteria
+- Every route/handler file uses a recognized strict schema validator (`safeParse(`, `validateSchema(`, etc.) or a reasoned `WEB-PROD-VALIDATION-EXEMPT: <reason>` comment.
 
-**Pass criteria:** no handler-like file without schema validation evidence. Exit 1 on findings.
+## Failure message format
+JSON report with `status: "fail"` and `findings`, exiting with code `1`.
 
-**Failure format:** JSON on stdout and human summary on stderr.
-
-**Run:** `npm run gate:input-validation`.
+## How to run
+```sh
+node gates/pre-merge/input-validation/run.mjs
+```

@@ -1,0 +1,3 @@
+version: 1
+severity: block
+require_tested_rollback: true
