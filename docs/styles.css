@@ -775,3 +775,4 @@ button { font: inherit; color: inherit; }
   .docs-main-area { grid-template-columns: minmax(0, 1fr) 224px; gap: 36px; padding: 36px 40px 80px; }
   .toc-aside { display: block; }
 }
+
