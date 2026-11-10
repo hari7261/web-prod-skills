@@ -1,33 +1,203 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Web Prod Skills | Production Readiness for AI Coding Agents</title>
-<meta name="description" content="Open-source production-readiness toolkit for AI coding agents and web engineering teams: 49 reusable skills, 27 executable gates, engineering baselines, templates, evals and GitHub Actions.">
-<meta name="keywords" content="AI coding agent skills, production readiness, agentic engineering, web application security, LLM safety, prompt injection, DevSecOps, CI quality gates, software engineering standards">
-<meta name="author" content="Hari"><meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://hari7261.github.io/web-prod-skills/"><link rel="sitemap" type="application/xml" href="sitemap.xml">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Web Prod Skills"><meta property="og:title" content="Web Prod Skills | Production Readiness for AI Coding Agents"><meta property="og:description" content="49 agent skills, 27 deterministic quality gates, engineering baselines, starter templates and golden evals for production web applications."><meta property="og:url" content="https://hari7261.github.io/web-prod-skills/">
-<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Web Prod Skills"><meta name="twitter:description" content="Production-readiness skills and gates for AI coding agents.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Web Prod Skills","description":"Open-source production-readiness toolkit for AI coding agents and web engineering teams, including 49 skills, 27 executable gates, engineering baselines, starter templates and golden evals.","codeRepository":"https://github.com/hari7261/web-prod-skills","url":"https://hari7261.github.io/web-prod-skills/","license":"https://opensource.org/license/mit","programmingLanguage":["JavaScript","Markdown","YAML","JSON"],"runtimePlatform":"Node.js 20+","author":{"@type":"Person","name":"Hari","url":"https://github.com/hari7261"},"keywords":["AI coding agents","production readiness","web security","LLM safety","DevSecOps"]}</script>
-<style>
-:root{color-scheme:dark;--bg:#0b1020;--panel:#121b30;--text:#edf2ff;--muted:#aab7ce;--line:#293752;--accent:#a6c5ff;--green:#8be0b0}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#1c3157 0,transparent 42%),var(--bg);color:var(--text);font:16px/1.65 system-ui,sans-serif}a{color:var(--accent);text-underline-offset:3px}.wrap{width:min(1060px,calc(100% - 36px));margin:auto}header{padding:76px 0 48px}.eyebrow{color:var(--green);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}h1{font-size:clamp(2.5rem,7vw,4.7rem);line-height:1.04;letter-spacing:-.05em;max-width:850px;margin:16px 0}.lead{font-size:1.2rem;color:var(--muted);max-width:760px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}.btn{display:inline-block;padding:11px 17px;border:1px solid var(--line);border-radius:10px;text-decoration:none;font-weight:700}.primary{background:#dbe8ff;color:#101a30;border-color:#dbe8ff}.meta,footer{color:var(--muted);font-size:.9rem}section{margin:28px 0 44px}h2{font-size:1.65rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}.card h3{margin:0 0 8px}.card p,li{color:var(--muted)}.notice{border-left:3px solid #e4b76c;padding:14px 18px;background:#6e4d171c;color:var(--muted)}footer{border-top:1px solid var(--line);padding:25px 0 42px}@media(max-width:600px){header{padding-top:50px}}
-</style></head><body>
-<header class="wrap"><div class="eyebrow">Open source · MIT licensed · Node.js 20+ · v2.0.1</div>
-<h1>Production-minded skills for AI coding agents.</h1>
-<p class="lead">A complete production-readiness toolkit for web applications (frontend, backend, AI features, integrations, and delivery): 49 agent skills, 27 executable gates, 11 knowledge baselines, 8 template suites, and golden evaluation sets.</p>
-<div class="actions"><a class="btn primary" href="https://github.com/hari7261/web-prod-skills">Explore GitHub repository</a><a class="btn" href="https://github.com/hari7261/web-prod-skills/blob/main/README.md">Read documentation</a><a class="btn" href="https://github.com/hari7261/web-prod-skills/blob/main/LICENSE">MIT License</a></div>
-<p class="meta">Maintained by <a href="https://github.com/hari7261">Hari</a> · Source of truth: <a href="https://github.com/hari7261/web-prod-skills">GitHub</a></p></header>
-<main class="wrap">
-<section><h2>What is included</h2><div class="grid">
-<article class="card"><h3>49 Agent skills</h3><p>Modular skills across frontend, backend, AI features, integrations, cross-cutting security/observability, and delivery.</p><a href="https://github.com/hari7261/web-prod-skills/tree/main/skills">Browse skills →</a></article>
-<article class="card"><h3>27 Engineering gates</h3><p>Deterministic pre-commit, pre-merge, pre-deploy, and post-deploy gates emitting JSON and exiting 1 on failure.</p><a href="https://github.com/hari7261/web-prod-skills/tree/main/gates">Browse gates →</a></article>
-<article class="card"><h3>11 Knowledge baselines</h3><p>Principles, Definition of Done, security, reliability, AI, frontend, backend, integrations, anti-patterns, checklist, and glossary.</p><a href="https://github.com/hari7261/web-prod-skills/tree/main/knowledge">Read baselines →</a></article>
-<article class="card"><h3>Templates &amp; Evals</h3><p>8 production template suites, golden sets (prompt injection, output guardrails, RAG accuracy, refusal safety), rubrics, and runner.</p><a href="https://github.com/hari7261/web-prod-skills/tree/main/evals">Explore evals →</a></article>
-<article class="card"><h3>Agent contract</h3><p>Repository instructions and mandatory load order enforcing fresh gate evidence over unsupported claims.</p><a href="https://github.com/hari7261/web-prod-skills/blob/main/AGENTS.md">Read AGENTS.md →</a></article>
-<article class="card"><h3>CLI &amp; CI automation</h3><p>Zero-dependency Node.js CLI tools, nightly eval sweeps, tagged release validation, and automated catalog publishing.</p><a href="https://github.com/hari7261/web-prod-skills/actions">View workflow runs →</a></article></div></section>
-<section><h2>Built around production concerns</h2><ul><li>Security: secrets, boundary validation, authn/authz, tenant isolation, SAST, headers, CORS/CSRF, and supply chain.</li><li>Reliability: timeouts, jittered retries, idempotency, circuit breakers, backpressure, SLOs, and auto-rollback.</li><li>AI systems: versioned prompts, injection defense, output guardrails, RAG tenant isolation, streaming safety, and token budgets.</li><li>Delivery: API compatibility, zero-downtime migrations, canary plans, runbooks, postmortems, and Web Vitals.</li></ul></section>
-<section><h2>Understand the enforcement level</h2><div class="notice"><strong>Static heuristics and report validators complement—never replace—runtime testing.</strong> Consuming applications must run their own framework unit/integration, load, security, and live canary checks and feed genuine reports into the gates for the exact commit being released.</div></section>
-<section><h2>Get started</h2><p>Read the <a href="https://github.com/hari7261/web-prod-skills/blob/main/AGENTS.md">agent contract</a>, then inspect the <a href="https://github.com/hari7261/web-prod-skills/blob/main/config/skills.index.json">skills index</a> and <a href="https://github.com/hari7261/web-prod-skills/blob/main/config/gates.index.json">gates index</a>.</p><p><a href="https://github.com/hari7261/web-prod-skills">Get started on GitHub →</a></p></section><!-- GENERATED_CATALOG -->
-<!-- BUILD_REVISION -->
-</main>
-<footer><div class="wrap">© 2026 Hari · <a href="https://github.com/hari7261/web-prod-skills">Source code</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/LICENSE">MIT License</a> · <a href="llms.txt">llms.txt</a></div></footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Web Prod Skills | Production Readiness Documentation</title>
+  <meta name="description" content="Interactive documentation for Web Prod Skills: 49 production-readiness agent skills, 27 executable gates, 11 engineering baselines, 8 templates, and golden evals.">
+  <meta name="keywords" content="AI coding agent skills, production readiness, agentic engineering, web application security, LLM safety, prompt injection, DevSecOps, CI quality gates, software engineering standards">
+  <meta name="author" content="Hari">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://hari7261.github.io/web-prod-skills/">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Web Prod Skills">
+  <meta property="og:title" content="Web Prod Skills | Production Readiness Documentation">
+  <meta property="og:description" content="Read all 49 skills, 27 gates, 11 knowledge baselines, templates, and golden evals directly in the browser.">
+  <meta property="og:url" content="https://hari7261.github.io/web-prod-skills/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Web Prod Skills Documentation">
+  <meta name="twitter:description" content="Production-readiness skills, gates, baselines, templates, and evals for web applications.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Web Prod Skills","description":"Open-source production-readiness toolkit for AI coding agents and web engineering teams, including 49 skills, 27 executable gates, 11 knowledge baselines, 8 templates and golden evals.","codeRepository":"https://github.com/hari7261/web-prod-skills","url":"https://hari7261.github.io/web-prod-skills/","license":"https://opensource.org/license/mit","programmingLanguage":["JavaScript","Markdown","YAML","JSON"],"runtimePlatform":"Node.js 20+","author":{"@type":"Person","name":"Hari","url":"https://github.com/hari7261"},"keywords":["AI coding agents","production readiness","web security","LLM safety","DevSecOps"]}</script>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("wps-theme");
+        var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (dark) document.documentElement.classList.add("dark");
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button id="mobile-menu-btn" class="icon-btn mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <a class="brand" href="#/doc/overview/readme">
+          <span class="brand-mark" aria-hidden="true">WP</span>
+          <span>web-prod-skills</span>
+        </a>
+        <span id="version-pill" class="version-pill">v2.0.1</span>
+        <nav class="top-nav" aria-label="Primary sections">
+          <button class="top-nav-btn" type="button" data-group="Overview" data-default-doc="overview/readme">Docs</button>
+          <button class="top-nav-btn" type="button" data-group="Knowledge" data-default-doc="knowledge/principles">Knowledge</button>
+          <button class="top-nav-btn" type="button" data-group="Skills" data-default-doc="skills/frontend/component-architecture">Skills</button>
+          <button class="top-nav-btn" type="button" data-group="Gates" data-default-doc="gates/pre-commit/lint-and-typecheck">Gates</button>
+          <button class="top-nav-btn" type="button" data-group="Templates" data-default-doc="templates/frontend-app/README">Templates</button>
+          <button class="top-nav-btn" type="button" data-group="Evals" data-default-doc="evals/README">Evals</button>
+        </nav>
+      </div>
+      <div class="header-right">
+        <button id="search-trigger" class="search-trigger" type="button" aria-label="Search documentation">
+          <span style="display:inline-flex;align-items:center;gap:7px;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span class="search-trigger-label">Search docs...</span>
+          </span>
+          <kbd class="kbd">Ctrl K</kbd>
+        </button>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle color theme">
+          <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <a class="icon-btn" href="https://github.com/hari7261/web-prod-skills" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.77.12 3.06.74.8 1.19 1.83 1.19 3.09 0 4.41-2.7 5.39-5.27 5.67.42.36.79 1.08.79 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
+
+  <div class="docs-shell">
+    <aside id="sidebar" class="sidebar" aria-label="Documentation sidebar">
+      <div class="sidebar-mobile-head">
+        <span style="font-weight:700;font-size:14px;">Documentation</span>
+        <button id="sidebar-close-btn" class="icon-btn" type="button" aria-label="Close navigation menu">✕</button>
+      </div>
+      <div class="sidebar-scroll">
+        <nav id="sidebar-nav" aria-label="Repository documentation tree"></nav>
+      </div>
+    </aside>
+
+    <div class="docs-main-area">
+      <main id="doc-content" class="doc-container" tabindex="-1">
+        <p style="color:var(--muted-fg);">Loading documentation from repository index...</p>
+      </main>
+      <aside class="toc-aside" aria-label="On this page">
+        <div class="toc-sticky">
+          <p class="toc-title">On This Page</p>
+          <ul id="toc-list" class="toc-list"></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section id="seo-fallback" class="fallback-catalog">
+    <!-- GENERATED_CATALOG:START -->
+<section id="skills"><h2>Indexed agent skills (49)</h2><div class="fallback-grid"><article class="fallback-card"><h3>component-architecture</h3><p>Applies to: frontend, ui. creating or refactoring UI components; splitting server and client component boundaries</p><a href="#/doc/skills/frontend/component-architecture">Read component-architecture</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/frontend/component-architecture/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>state-management</h3><p>Applies to: frontend, ui. adding global or shared client state; implementing optimistic updates or server cache invalidation</p><a href="#/doc/skills/frontend/state-management">Read state-management</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/frontend/state-management/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>accessibility</h3><p>Applies to: frontend, ui. adding or modifying user-facing UI components; building forms, modals, menus, tables, or navigation</p><a href="#/doc/skills/frontend/accessibility">Read accessibility</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/frontend/accessibility/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>performance-budget</h3><p>Applies to: frontend, performance. adding frontend dependencies; modifying routes, layouts, or media loading</p><a href="#/doc/skills/frontend/performance-budget">Read performance-budget</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/frontend/performance-budget/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>ssr-hydration-safety</h3><p>Applies to: frontend, ssr. implementing SSR, RSC, or streaming HTML rendering; accessing window, document, or localStorage in shared components</p><a href="#/doc/skills/frontend/ssr-hydration-safety">Read ssr-hydration-safety</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/frontend/ssr-hydration-safety/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>error-boundaries</h3><p>Applies to: frontend, ui. adding new page routes or layout shells; rendering third-party widgets or dynamic data visualizations</p><a href="#/doc/skills/frontend/error-boundaries">Read error-boundaries</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/frontend/error-boundaries/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>forms-and-validation</h3><p>Applies to: frontend, ui. creating or modifying user input forms; submitting mutations from browser UI</p><a href="#/doc/skills/frontend/forms-and-validation">Read forms-and-validation</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/frontend/forms-and-validation/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>safe-rendering</h3><p>Applies to: frontend, security, ai. rendering markdown, rich text, HTML, or SVG; displaying LLM-generated text or citations in the UI</p><a href="#/doc/skills/frontend/safe-rendering">Read safe-rendering</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/frontend/safe-rendering/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>i18n-and-timezone</h3><p>Applies to: frontend, ui. formatting dates, times, numbers, or currencies; adding multi-language copy or RTL layout support</p><a href="#/doc/skills/frontend/i18n-and-timezone">Read i18n-and-timezone</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/frontend/i18n-and-timezone/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>api-contract-first</h3><p>Applies to: backend, api. adding or changing REST, GraphQL, or tRPC endpoints; changing request or response schemas</p><a href="#/doc/skills/backend/api-contract-first">Read api-contract-first</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/backend/api-contract-first/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>input-validation</h3><p>Applies to: backend, api. adding or changing an HTTP endpoint; parsing request body/query/params/headers</p><a href="#/doc/skills/backend/input-validation">Read input-validation</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/backend/input-validation/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>authn-authz</h3><p>Applies to: backend, api, security. adding or changing a server route or resolver; implementing login, session, JWT, or API key checks</p><a href="#/doc/skills/backend/authn-authz">Read authn-authz</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/backend/authn-authz/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>multi-tenancy</h3><p>Applies to: backend, database, security. storing or querying tenant-owned data; implementing tenant-scoped RAG retrieval or webhooks</p><a href="#/doc/skills/backend/multi-tenancy">Read multi-tenancy</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/backend/multi-tenancy/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>rate-limiting</h3><p>Applies to: backend, api, security. adding public, auth, password-reset, or OTP endpoints; exposing AI generation, search, or export endpoints</p><a href="#/doc/skills/backend/rate-limiting">Read rate-limiting</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/backend/rate-limiting/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>idempotency</h3><p>Applies to: backend, api, reliability. implementing POST/PUT/PATCH mutations with side effects; handling payment charges, refunds, or order creation</p><a href="#/doc/skills/backend/idempotency">Read idempotency</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/backend/idempotency/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>pagination-and-filtering</h3><p>Applies to: backend, api, database. adding list or search API endpoints; adding sort, filter, or pagination query params</p><a href="#/doc/skills/backend/pagination-and-filtering">Read pagination-and-filtering</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/backend/pagination-and-filtering/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>db-migrations</h3><p>Applies to: backend, database, delivery. modifying database tables, columns, indexes, or constraints; writing data backfills</p><a href="#/doc/skills/backend/db-migrations">Read db-migrations</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/backend/db-migrations/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>background-jobs</h3><p>Applies to: backend, reliability. adding async queues, workers, cron jobs, or event consumers; offloading slow email, webhook, AI, or export tasks</p><a href="#/doc/skills/backend/background-jobs">Read background-jobs</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/backend/background-jobs/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>file-uploads</h3><p>Applies to: backend, security. implementing file upload endpoints or presigned URLs; parsing multipart forms, CSVs, PDFs, or images</p><a href="#/doc/skills/backend/file-uploads">Read file-uploads</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/backend/file-uploads/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>query-performance</h3><p>Applies to: backend, database, performance. writing ORM or SQL queries inside loops or resolvers; configuring database connection pools</p><a href="#/doc/skills/backend/query-performance">Read query-performance</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/backend/query-performance/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>llm-integration</h3><p>Applies to: ai, backend. adding or changing an LLM provider call; building an AI-backed API endpoint</p><a href="#/doc/skills/ai-features/llm-integration">Read llm-integration</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/ai-features/llm-integration/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>prompt-management</h3><p>Applies to: ai, backend. creating or editing a production prompt; changing model ID, temperature, or system instructions</p><a href="#/doc/skills/ai-features/prompt-management">Read prompt-management</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/ai-features/prompt-management/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>output-guardrails</h3><p>Applies to: ai, backend, frontend, security. consuming LLM output in backend logic or UI; executing tool calls proposed by a model</p><a href="#/doc/skills/ai-features/output-guardrails">Read output-guardrails</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/ai-features/output-guardrails/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>prompt-injection-defense</h3><p>Applies to: ai, security. passing user input, web pages, emails, or RAG documents into LLM context; connecting an LLM to tools or external data sources</p><a href="#/doc/skills/ai-features/prompt-injection-defense">Read prompt-injection-defense</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/ai-features/prompt-injection-defense/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>rag-pipeline</h3><p>Applies to: ai, backend, database. implementing vector search, chunking, or retrieval-augmented generation; indexing customer or knowledge-base documents</p><a href="#/doc/skills/ai-features/rag-pipeline">Read rag-pipeline</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/ai-features/rag-pipeline/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>streaming-safety</h3><p>Applies to: ai, backend, frontend. implementing SSE or WebSocket LLM token streaming; handling mid-stream errors, disconnects, or tool calls</p><a href="#/doc/skills/ai-features/streaming-safety">Read streaming-safety</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/ai-features/streaming-safety/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>eval-harness</h3><p>Applies to: ai, delivery. changing prompts, models, temperatures, tools, or retrieval logic; adding new AI evaluation cases or rubrics</p><a href="#/doc/skills/ai-features/eval-harness">Read eval-harness</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/ai-features/eval-harness/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>cost-and-token-budget</h3><p>Applies to: ai, backend, cost. adding AI endpoints, embeddings, or autonomous agent loops; configuring model parameters or tenant quotas</p><a href="#/doc/skills/ai-features/cost-and-token-budget">Read cost-and-token-budget</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/ai-features/cost-and-token-budget/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>model-fallback</h3><p>Applies to: ai, reliability. calling external LLM providers in user-facing flows; configuring multi-model routing or circuit breakers</p><a href="#/doc/skills/ai-features/model-fallback">Read model-fallback</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/ai-features/model-fallback/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>pii-redaction</h3><p>Applies to: ai, security, privacy. sending user or customer text to third-party LLM APIs; logging AI prompts, completions, or building eval datasets</p><a href="#/doc/skills/ai-features/pii-redaction">Read pii-redaction</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/ai-features/pii-redaction/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>third-party-api-client</h3><p>Applies to: backend, integrations. calling an external SaaS or partner HTTP API; fetching user-provided URLs or metadata</p><a href="#/doc/skills/integrations/third-party-api-client">Read third-party-api-client</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/integrations/third-party-api-client/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>webhook-handling</h3><p>Applies to: backend, integrations, security. receiving inbound webhooks from Stripe, GitHub, Slack, or partners; verifying webhook signatures or replay protection</p><a href="#/doc/skills/integrations/webhook-handling">Read webhook-handling</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/integrations/webhook-handling/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>oauth-flows</h3><p>Applies to: backend, integrations, security. adding social login or OAuth 2.0 / OIDC integrations; storing or refreshing third-party OAuth access/refresh tokens</p><a href="#/doc/skills/integrations/oauth-flows">Read oauth-flows</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/integrations/oauth-flows/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>quota-and-degradation</h3><p>Applies to: backend, integrations, reliability. integrating rate-limited or metered third-party APIs; defining fallback UX when external dependencies degrade</p><a href="#/doc/skills/integrations/quota-and-degradation">Read quota-and-degradation</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/integrations/quota-and-degradation/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>payment-integrations</h3><p>Applies to: backend, integrations, security. integrating Stripe, PayPal, Razorpay, or billing/subscription flows; handling checkout, refunds, or entitlement updates</p><a href="#/doc/skills/integrations/payment-integrations">Read payment-integrations</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/integrations/payment-integrations/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>secrets-management</h3><p>Applies to: web, security. adding configuration or credentials; handling API keys, tokens, or signing secrets</p><a href="#/doc/skills/cross-cutting/secrets-management">Read secrets-management</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/cross-cutting/secrets-management/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>observability</h3><p>Applies to: frontend, backend, ai, integrations. adding a new network, database, queue, or LLM call; configuring SLO dashboards or alerts</p><a href="#/doc/skills/cross-cutting/observability">Read observability</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/cross-cutting/observability/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>error-handling</h3><p>Applies to: backend, frontend, cross-cutting. writing try/catch blocks or error middleware; mapping internal failures to HTTP/GraphQL errors</p><a href="#/doc/skills/cross-cutting/error-handling">Read error-handling</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/cross-cutting/error-handling/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>logging-pii-scrubbing</h3><p>Applies to: backend, frontend, ai, security. adding structured logging or request/response logging middleware; configuring Sentry, OpenTelemetry, or error reporters</p><a href="#/doc/skills/cross-cutting/logging-pii-scrubbing">Read logging-pii-scrubbing</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/cross-cutting/logging-pii-scrubbing/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>feature-flags</h3><p>Applies to: frontend, backend, delivery. shipping risky or incremental product features; decoupling code deploy from feature release</p><a href="#/doc/skills/cross-cutting/feature-flags">Read feature-flags</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/cross-cutting/feature-flags/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>caching</h3><p>Applies to: backend, frontend, performance. adding Cache-Control headers, CDN caching, or Redis/memory caches; caching authenticated or personalized API responses</p><a href="#/doc/skills/cross-cutting/caching">Read caching</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/cross-cutting/caching/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>security-headers</h3><p>Applies to: frontend, backend, security. configuring HTTP server, reverse proxy, or Next.js/Express security middleware; updating Content-Security-Policy or framing rules</p><a href="#/doc/skills/cross-cutting/security-headers">Read security-headers</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/cross-cutting/security-headers/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>cors-and-csrf</h3><p>Applies to: backend, frontend, security. configuring CORS middleware or API access-control headers; building cookie-authenticated POST/PUT/PATCH/DELETE endpoints</p><a href="#/doc/skills/cross-cutting/cors-and-csrf">Read cors-and-csrf</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/cross-cutting/cors-and-csrf/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>dependency-supply-chain</h3><p>Applies to: web, security, delivery. adding, upgrading, or removing dependencies; reviewing lockfiles, vulnerability scans, or SBOMs</p><a href="#/doc/skills/cross-cutting/dependency-supply-chain">Read dependency-supply-chain</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/cross-cutting/dependency-supply-chain/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>ci-pipeline</h3><p>Applies to: delivery, security. creating or modifying GitHub Actions or CI workflows; configuring build artifact hashing or release automation</p><a href="#/doc/skills/delivery/ci-pipeline">Read ci-pipeline</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/delivery/ci-pipeline/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>deployment-strategy</h3><p>Applies to: delivery, reliability. planning or executing a production deployment; configuring canary, blue-green, or progressive traffic shifting</p><a href="#/doc/skills/delivery/deployment-strategy">Read deployment-strategy</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/delivery/deployment-strategy/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>rollback</h3><p>Applies to: delivery, reliability. preparing a production release or infrastructure change; configuring automated post-deploy rollback hooks</p><a href="#/doc/skills/delivery/rollback">Read rollback</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/delivery/rollback/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>incident-runbook</h3><p>Applies to: delivery, reliability. launching a new web service, endpoint, or integration; adding or modifying production alerts</p><a href="#/doc/skills/delivery/incident-runbook">Read incident-runbook</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/delivery/incident-runbook/SKILL.md">Source</a></article>
+<article class="fallback-card"><h3>postmortem</h3><p>Applies to: delivery, reliability. recovering from a production incident or automated rollback; investigating an SLO or error-budget breach</p><a href="#/doc/skills/delivery/postmortem">Read postmortem</a> · <a href="https://github.com/hari7261/web-prod-skills/blob/main/skills/delivery/postmortem/SKILL.md">Source</a></article></div></section>
+<section id="gates"><h2>Indexed engineering gates (27)</h2><div class="fallback-grid"><article class="fallback-card"><h3>lint-and-typecheck</h3><p>Stage: pre-commit · Severity: block</p><a href="#/doc/gates/pre-commit/lint-and-typecheck">Read lint-and-typecheck</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-commit/lint-and-typecheck">Source</a></article>
+<article class="fallback-card"><h3>secrets-scan</h3><p>Stage: pre-commit · Severity: block</p><a href="#/doc/gates/pre-commit/secrets-scan">Read secrets-scan</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-commit/secrets-scan">Source</a></article>
+<article class="fallback-card"><h3>dangerous-html-scan</h3><p>Stage: pre-commit · Severity: block</p><a href="#/doc/gates/pre-commit/dangerous-html-scan">Read dangerous-html-scan</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-commit/dangerous-html-scan">Source</a></article>
+<article class="fallback-card"><h3>bundle-budget</h3><p>Stage: pre-commit · Severity: block</p><a href="#/doc/gates/pre-commit/bundle-budget">Read bundle-budget</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-commit/bundle-budget">Source</a></article>
+<article class="fallback-card"><h3>tests-unit-integration</h3><p>Stage: pre-merge · Severity: block</p><a href="#/doc/gates/pre-merge/tests-unit-integration">Read tests-unit-integration</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-merge/tests-unit-integration">Source</a></article>
+<article class="fallback-card"><h3>accessibility</h3><p>Stage: pre-merge · Severity: block</p><a href="#/doc/gates/pre-merge/accessibility">Read accessibility</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-merge/accessibility">Source</a></article>
+<article class="fallback-card"><h3>api-contract-diff</h3><p>Stage: pre-merge · Severity: block</p><a href="#/doc/gates/pre-merge/api-contract-diff">Read api-contract-diff</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-merge/api-contract-diff">Source</a></article>
+<article class="fallback-card"><h3>input-validation</h3><p>Stage: pre-merge · Severity: block</p><a href="#/doc/gates/pre-merge/input-validation">Read input-validation</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-merge/input-validation">Source</a></article>
+<article class="fallback-card"><h3>route-authz</h3><p>Stage: pre-merge · Severity: block</p><a href="#/doc/gates/pre-merge/route-authz">Read route-authz</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-merge/route-authz">Source</a></article>
+<article class="fallback-card"><h3>sast</h3><p>Stage: pre-merge · Severity: block</p><a href="#/doc/gates/pre-merge/sast">Read sast</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-merge/sast">Source</a></article>
+<article class="fallback-card"><h3>dependency-audit</h3><p>Stage: pre-merge · Severity: block</p><a href="#/doc/gates/pre-merge/dependency-audit">Read dependency-audit</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-merge/dependency-audit">Source</a></article>
+<article class="fallback-card"><h3>observability-presence</h3><p>Stage: pre-merge · Severity: block</p><a href="#/doc/gates/pre-merge/observability-presence">Read observability-presence</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-merge/observability-presence">Source</a></article>
+<article class="fallback-card"><h3>llm-call-resilience</h3><p>Stage: pre-merge · Severity: block</p><a href="#/doc/gates/pre-merge/llm-call-resilience">Read llm-call-resilience</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-merge/llm-call-resilience">Source</a></article>
+<article class="fallback-card"><h3>prompt-hygiene</h3><p>Stage: pre-merge · Severity: block</p><a href="#/doc/gates/pre-merge/prompt-hygiene">Read prompt-hygiene</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-merge/prompt-hygiene">Source</a></article>
+<article class="fallback-card"><h3>output-guardrails</h3><p>Stage: pre-merge · Severity: block</p><a href="#/doc/gates/pre-merge/output-guardrails">Read output-guardrails</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-merge/output-guardrails">Source</a></article>
+<article class="fallback-card"><h3>prompt-evals</h3><p>Stage: pre-merge · Severity: block</p><a href="#/doc/gates/pre-merge/prompt-evals">Read prompt-evals</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-merge/prompt-evals">Source</a></article>
+<article class="fallback-card"><h3>production-build</h3><p>Stage: pre-deploy · Severity: block</p><a href="#/doc/gates/pre-deploy/production-build">Read production-build</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-deploy/production-build">Source</a></article>
+<article class="fallback-card"><h3>migration-dry-run</h3><p>Stage: pre-deploy · Severity: block</p><a href="#/doc/gates/pre-deploy/migration-dry-run">Read migration-dry-run</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-deploy/migration-dry-run">Source</a></article>
+<article class="fallback-card"><h3>migration-rollback-present</h3><p>Stage: pre-deploy · Severity: block</p><a href="#/doc/gates/pre-deploy/migration-rollback-present">Read migration-rollback-present</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-deploy/migration-rollback-present">Source</a></article>
+<article class="fallback-card"><h3>env-config-diff</h3><p>Stage: pre-deploy · Severity: block</p><a href="#/doc/gates/pre-deploy/env-config-diff">Read env-config-diff</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-deploy/env-config-diff">Source</a></article>
+<article class="fallback-card"><h3>canary-plan-present</h3><p>Stage: pre-deploy · Severity: block</p><a href="#/doc/gates/pre-deploy/canary-plan-present">Read canary-plan-present</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-deploy/canary-plan-present">Source</a></article>
+<article class="fallback-card"><h3>rollback-plan-present</h3><p>Stage: pre-deploy · Severity: block</p><a href="#/doc/gates/pre-deploy/rollback-plan-present">Read rollback-plan-present</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/pre-deploy/rollback-plan-present">Source</a></article>
+<article class="fallback-card"><h3>smoke-tests</h3><p>Stage: post-deploy · Severity: block</p><a href="#/doc/gates/post-deploy/smoke-tests">Read smoke-tests</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/post-deploy/smoke-tests">Source</a></article>
+<article class="fallback-card"><h3>error-rate-vs-baseline</h3><p>Stage: post-deploy · Severity: block</p><a href="#/doc/gates/post-deploy/error-rate-vs-baseline">Read error-rate-vs-baseline</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/post-deploy/error-rate-vs-baseline">Source</a></article>
+<article class="fallback-card"><h3>slo-check</h3><p>Stage: post-deploy · Severity: block</p><a href="#/doc/gates/post-deploy/slo-check">Read slo-check</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/post-deploy/slo-check">Source</a></article>
+<article class="fallback-card"><h3>web-vitals-check</h3><p>Stage: post-deploy · Severity: block</p><a href="#/doc/gates/post-deploy/web-vitals-check">Read web-vitals-check</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/post-deploy/web-vitals-check">Source</a></article>
+<article class="fallback-card"><h3>auto-rollback-trigger</h3><p>Stage: post-deploy · Severity: block</p><a href="#/doc/gates/post-deploy/auto-rollback-trigger">Read auto-rollback-trigger</a> · <a href="https://github.com/hari7261/web-prod-skills/tree/main/gates/post-deploy/auto-rollback-trigger">Source</a></article></div></section>
+    <!-- GENERATED_CATALOG:END -->
+    <!-- BUILD_REVISION:START -->
+    <p class="meta">Published v2.0.1 from revision <code>local</code>.</p>
+    <!-- BUILD_REVISION:END -->
+  </section>
+
+  <div id="search-dialog" class="search-dialog" role="dialog" aria-modal="true" aria-label="Search documentation" hidden>
+    <div class="search-panel">
+      <div class="search-input-row">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="search-input" class="search-input" type="search" placeholder="Search skills, gates, baselines, templates, evals..." autocomplete="off">
+        <span class="kbd" style="display:inline;">Esc</span>
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Web Prod Skills · Open-source MIT License · Maintained by <a href="https://github.com/hari7261" target="_blank" rel="noopener noreferrer">Hari</a></span>
+      <span id="footer-rev">Synced automatically from repository via GitHub Actions</span>
+    </div>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

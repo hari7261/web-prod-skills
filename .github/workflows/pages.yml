@@ -27,6 +27,9 @@ jobs:
       - name: Validate generated site
         run: |
           test -s docs/index.html
+          test -s docs/styles.css
+          test -s docs/app.js
+          test -s docs/docs-data.json
           test -s docs/robots.txt
           test -s docs/sitemap.xml
           test -s docs/llms.txt

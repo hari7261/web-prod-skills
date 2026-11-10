@@ -54,3 +54,16 @@ test("webhook safety script detects missing signature/replay defenses on unsafe 
   assert.equal(passRes.status, 0, passRes.stdout + "\n" + passRes.stderr);
 });
 
+test("build-site generates docs-data.json with all repository docs and safe DOM renderer", async () => {
+  const res = spawnSync(process.execPath, [path.resolve("scripts/build-site.mjs")], { encoding: "utf8" });
+  assert.equal(res.status, 0, res.stderr);
+  const data = JSON.parse(await readFile(path.resolve("docs/docs-data.json"), "utf8"));
+  assert.equal(data.counts.skills, 49);
+  assert.equal(data.counts.gates, 27);
+  assert.equal(data.counts.knowledge, 11);
+  assert.ok(data.docs["overview/readme"]?.markdown.length > 100);
+  assert.ok(data.docs["knowledge/principles"]?.markdown.length > 100);
+  const appJs = await readFile(path.resolve("docs/app.js"), "utf8");
+  assert.equal(appJs.includes("innerHTML"), false, "docs/app.js must not use innerHTML");
+});
+
