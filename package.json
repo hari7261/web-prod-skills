@@ -29,7 +29,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test \"tests/*.test.mjs\"",
+    "test": "node --test tests/repo-integrity.test.mjs tests/gates-fixtures.test.mjs tests/scripts-evals.test.mjs",
     "evals": "node scripts/run-evals.mjs",
     "report": "node scripts/report.mjs",
     "build:site": "node scripts/build-site.mjs",
